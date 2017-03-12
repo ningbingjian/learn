@@ -1,4 +1,4 @@
-package com.ning.net.common.server;
+package com.ning.server;
 
 
 import org.apache.spark.network.util.IOMode;
