@@ -1,4 +1,4 @@
-package com.ning.net.common.network;
+package com.ning.network;
 
 /**
  * Created by zhaoshufen on 2017/3/12.
