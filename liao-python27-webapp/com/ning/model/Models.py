@@ -45,11 +45,88 @@ herb_fido.owner = uncle_bob
 herb_fido.save()
 #变量名  提醒fido已经是bob的宠物了
 bob_fido = herb_fido
-'''
 
-#获取一行
+
+#查询一行
 grandma = Person.select().where(Person.name == "Grandma L.").get()
 print grandma
+
+
+#查询一行的缩写
+grandma = Person.get(Person.name == 'Grandma L.')
+print grandma
+
+#查询list
+for person in Person.select():
+    print person.name,person.birthday
+
+
+#查询 所有cat类型的宠物  因为原始查询没有包含owner,所以这种查询会有n+1的情况
+query = Pet.select().where(Pet.animal_type == 'cat')
+for pet in query:
+    print pet.name,pet.animal_type,pet.owner.name
+
+
+#通过join避免n+1查询
+query = Pet.select(Pet,Person).join(Person).where(Pet.animal_type == 'cat')
+for pet in query:
+    print pet.name,pet.owner.name
+
+
+
+#查询所有拥有着是Bob的宠物 [Person.name 不可以写成Pet.owner.name]
+query = Pet.select().join(Person).where(Person.name == 'Bob')
+for pet in query:
+    print pet.name,pet.owner.name
+
+
+
+##如果已经有一个表示owner对象 可以直接用来做join的in
+for pet in Pet.select().where(Pet.owner == uncle_bob):
+     print pet.name
+#order by
+for pet in Pet.select().where(Pet.owner == uncle_bob).order_by(Pet.name):
+    print pet.name
+
+
+#降序
+for person in Person.select().order_by(Person.birthday.desc()):
+    print person.name,person.birthday
+
+
+#查询用户和用户对应的宠物  这里又陷入了n+1的问题  往下继续解决
+for person in Person.select():
+    print person.name,person.pets.count(),'pets'
+    for pet in person.pets:
+        print ' ',pet.name,pet.animal_type
+
+#解决n+1问题，只会发出一次SQL 说实在 python也不是太好看啊   IDE里根本没法提示这些写法。
+subquery = Pet.select(fn.COUNT(Pet.id)).where(Pet.owner == Person.id)
+query = Person.select(Person,Pet,subquery.alias('pet_count')).join(Pet,JOIN_LEFT_OUTER).order_by(Person.name)
+for person in query.aggregate_rows():
+    print person.name,person.pet_count, 'pets'
+    for pet in person.pets:
+        print '  ' ,pet.name,pet.animal_type
+
+
+
+
+d1940 = date(1940, 1, 1)
+d1960 = date(1960, 1, 1)
+#查询1940以前或者1960以后的用户  (Person.birthday < d1940) 注意括号
+query =  Person.select().where((Person.birthday < d1940) | (Person.birthday > d1960))
+#查询1940以后并且1960以前的用户  (Person.birthday < d1940) 注意括号
+query =  Person.select().where((Person.birthday > d1940) & (Person.birthday < d1960))
+for person in query :
+    print person.name,person.birthday
+
+#根据数据库生成模型
+python.exe -m pwiz  -e mysql -H localhost -p 3306 -u root -P 123456  test  >test_model.py
+
+'''
+#操作完成 记得关闭数据库连接
+db.close()
+
 
 
 
