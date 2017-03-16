@@ -22,6 +22,7 @@ def sign_form():
     </form>
 
     """
+#
 @app.route('/sign_in',methods=['GET','POST'])
 def sign_in():
     if request.form['password'] == 'admin':
