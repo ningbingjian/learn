@@ -20,6 +20,7 @@ import java.util.List;
  * Created by ning on 2017/3/17.
  */
 public class RpcServer {
+
     private TransportServer server;
     private TransportClientFactory clientFactory;
     private RpcHandler rpcHandler;
