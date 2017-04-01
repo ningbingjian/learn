@@ -1,0 +1,36 @@
+参考:
+https://united.softserveinc.com/blogs/hadoop-cluster-cloudera-manager/
+
+## mysql安装
+yum -y install mysql-server mysql
+# yum install mariadb-server -y
+# systemctl start mariadb.service
+# systemctl enable mariadb.service
+# mysql
+## 配置mysql用户
+##执行下面的脚本 配置mysql的安全设置
+mysql_secure_installation
+## 配置scm用户
+ mysql -u root -p123456 -e "create database scm" mysql
+ mysql -u root -p123456 -e "grant all on *.* to 'scm'@'%' identified by 'scm' with grant option;" mysql
+## jdk安装
+
+## 安装mysql java 驱动
+
+##配置cm本地源
+tar xf cm5.10.1-centos7.tar.gz 
+mv cm /var/www/html/
+vim /etc/yum.repos.d/cloudera-manager.repo
+配置内容
+[cloudera-manager]
+# Packages for Cloudera Manager, Version 5, on RedHat or CentOS 5 x86_64
+name=Cloudera Manager
+baseurl=http://ning-1/cm/5/
+gpgkey=https://archive.cloudera.com/cm5/redhat/5/x86_64/cm/RPM-GPG-KEY-cloudera 
+#gpgcheck=0 
+ 
+## 安装cm server 等软件
+#yum -y install cloudera-manager-server cloudera-manager-daemons
+## 配置cm元数据
+/usr/share/cmf/schema/scm_prepare_database.sh mysql -h localhost scm scm scm
+
