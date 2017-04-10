@@ -1,0 +1,272 @@
+2016-10-10 16:56:54  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-10-10 16:56:59  [ ScalaTest-run:5175 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-10-10 16:57:04  [ ScalaTest-run:9393 ] - [ INFO ]  Changing view acls to: ning
+2016-10-10 16:57:04  [ ScalaTest-run:9398 ] - [ INFO ]  Changing modify acls to: ning
+2016-10-10 16:57:04  [ ScalaTest-run:9408 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-10-10 16:57:11  [ ScalaTest-run:16563 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 64624.
+2016-10-10 16:57:14  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:19698 ] - [ INFO ]  Slf4jLogger started
+2016-10-10 16:57:15  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:20543 ] - [ INFO ]  Starting remoting
+2016-10-10 16:57:16  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:21882 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:64639]
+2016-10-10 16:57:16  [ ScalaTest-run:21960 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 64639.
+2016-10-10 16:57:17  [ ScalaTest-run:22290 ] - [ INFO ]  Registering MapOutputTracker
+2016-10-10 16:57:17  [ ScalaTest-run:23151 ] - [ INFO ]  Registering BlockManagerMaster
+2016-10-10 16:57:18  [ ScalaTest-run:23319 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-402d3f68-a8a6-43a8-b431-72d49a012721
+2016-10-10 16:57:18  [ ScalaTest-run:23702 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-10-10 16:57:19  [ ScalaTest-run:24939 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-10-10 16:57:23  [ ScalaTest-run:28748 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-10-10 16:57:23  [ ScalaTest-run:28873 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-10-10 16:57:23  [ ScalaTest-run:28874 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-10-10 16:57:23  [ ScalaTest-run:28914 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-10-10 16:57:26  [ ScalaTest-run:32110 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-10-10 16:57:27  [ ScalaTest-run:32873 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 64660.
+2016-10-10 16:57:27  [ ScalaTest-run:32882 ] - [ INFO ]  Server created on 64660
+2016-10-10 16:57:27  [ ScalaTest-run:32932 ] - [ INFO ]  Trying to register BlockManager
+2016-10-10 16:57:27  [ dispatcher-event-loop-2:32973 ] - [ INFO ]  Registering block manager localhost:64660 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 64660)
+2016-10-10 16:57:27  [ ScalaTest-run:33009 ] - [ INFO ]  Registered BlockManager
+2016-10-10 16:57:32  [ ScalaTest-run-running-RDDSuite:37619 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR ning.spark.suite.RDDSuite: 'RDD' =====
+
+2016-10-10 16:57:38  [ ScalaTest-run-running-RDDSuite:43493 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 107.7 KB, free 107.7 KB)
+2016-10-10 16:57:38  [ ScalaTest-run-running-RDDSuite:43949 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 9.8 KB, free 117.5 KB)
+2016-10-10 16:57:38  [ dispatcher-event-loop-0:44001 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:64660 (size: 9.8 KB, free: 1117.9 MB)
+2016-10-10 16:57:39  [ ScalaTest-run-running-RDDSuite:44551 ] - [ INFO ]  Created broadcast 0 from textFile at RDDSuite.scala:258
+2016-10-10 16:57:42  [ ScalaTest-run-running-RDDSuite:47774 ] - [ ERROR ]  Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:278)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:300)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:293)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:76)
+	at org.apache.hadoop.mapred.FileInputFormat.setInputPaths(FileInputFormat.java:362)
+	at org.apache.spark.SparkContext$$anonfun$hadoopFile$1$$anonfun$33.apply(SparkContext.scala:1018)
+	at org.apache.spark.SparkContext$$anonfun$hadoopFile$1$$anonfun$33.apply(SparkContext.scala:1018)
+	at org.apache.spark.rdd.HadoopRDD$$anonfun$getJobConf$6.apply(HadoopRDD.scala:176)
+	at org.apache.spark.rdd.HadoopRDD$$anonfun$getJobConf$6.apply(HadoopRDD.scala:176)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.spark.rdd.HadoopRDD.getJobConf(HadoopRDD.scala:176)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:195)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.RDD.getNumPartitions(RDD.scala:249)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply$mcV$sp(RDDSuite.scala:263)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply(RDDSuite.scala:257)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply(RDDSuite.scala:257)
+	at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+	at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:166)
+	at ning.spark.suite.SparkFunSuite.withFixture(SparkFunSuite.scala:16)
+	at org.scalatest.FunSuiteLike$class.invokeWithFixture$1(FunSuiteLike.scala:163)
+	at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)
+	at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:306)
+	at org.scalatest.FunSuiteLike$class.runTest(FunSuiteLike.scala:175)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1555)
+	at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)
+	at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)
+	at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:413)
+	at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:401)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:401)
+	at org.scalatest.SuperEngine.org$scalatest$SuperEngine$$runTestsInBranch(Engine.scala:396)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:483)
+	at org.scalatest.FunSuiteLike$class.runTests(FunSuiteLike.scala:208)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1555)
+	at org.scalatest.Suite$class.run(Suite.scala:1424)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1555)
+	at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)
+	at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:545)
+	at org.scalatest.FunSuiteLike$class.run(FunSuiteLike.scala:212)
+	at ning.spark.suite.RDDSuite.org$scalatest$BeforeAndAfterAll$$super$run(RDDSuite.scala:27)
+	at org.scalatest.BeforeAndAfterAll$class.liftedTree1$1(BeforeAndAfterAll.scala:257)
+	at org.scalatest.BeforeAndAfterAll$class.run(BeforeAndAfterAll.scala:256)
+	at ning.spark.suite.RDDSuite.run(RDDSuite.scala:27)
+	at org.scalatest.tools.SuiteRunner.run(SuiteRunner.scala:55)
+	at org.scalatest.tools.Runner$$anonfun$doRunRunRunDaDoRunRun$3.apply(Runner.scala:2563)
+	at org.scalatest.tools.Runner$$anonfun$doRunRunRunDaDoRunRun$3.apply(Runner.scala:2557)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.scalatest.tools.Runner$.doRunRunRunDaDoRunRun(Runner.scala:2557)
+	at org.scalatest.tools.Runner$$anonfun$runOptionallyWithPassFailReporter$2.apply(Runner.scala:1044)
+	at org.scalatest.tools.Runner$$anonfun$runOptionallyWithPassFailReporter$2.apply(Runner.scala:1043)
+	at org.scalatest.tools.Runner$.withClassLoaderAndDispatchReporter(Runner.scala:2722)
+	at org.scalatest.tools.Runner$.runOptionallyWithPassFailReporter(Runner.scala:1043)
+	at org.scalatest.tools.Runner$.run(Runner.scala:883)
+	at org.scalatest.tools.Runner.run(Runner.scala)
+	at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.runScalaTest2(ScalaTestRunner.java:138)
+	at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.main(ScalaTestRunner.java:28)
+2016-10-10 16:57:44  [ ScalaTest-run-running-RDDSuite:49326 ] - [ WARN ]  Your hostname, ning-PC resolves to a loopback/non-reachable address: fe80:0:0:0:0:5efe:c0a8:c790%net10, but we couldn't find any external IP address!
+2016-10-10 16:57:46  [ ScalaTest-run-running-RDDSuite:51611 ] - [ INFO ]  Total input paths to process : 10
+2016-10-10 16:57:48  [ ScalaTest-run-running-RDDSuite:54056 ] - [ INFO ]  Starting job: collect at RDDSuite.scala:268
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:54734 ] - [ INFO ]  Registering RDD 3 (map at RDDSuite.scala:261)
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:54780 ] - [ INFO ]  Registering RDD 5 (map at RDDSuite.scala:264)
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:54782 ] - [ INFO ]  Registering RDD 7 (map at RDDSuite.scala:266)
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:55056 ] - [ INFO ]  Got job 0 (collect at RDDSuite.scala:268) with 10 output partitions
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:55066 ] - [ INFO ]  Final stage: ResultStage 3 (collect at RDDSuite.scala:268)
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:55070 ] - [ INFO ]  Parents of final stage: List(ShuffleMapStage 2)
+2016-10-10 16:57:49  [ dag-scheduler-event-loop:55153 ] - [ INFO ]  Missing parents: List(ShuffleMapStage 2)
+2016-10-10 16:57:50  [ dag-scheduler-event-loop:55557 ] - [ INFO ]  Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at RDDSuite.scala:261), which has no missing parents
+2016-10-10 16:57:51  [ dag-scheduler-event-loop:56371 ] - [ INFO ]  Block broadcast_1 stored as values in memory (estimated size 4.2 KB, free 121.7 KB)
+2016-10-10 16:57:51  [ dag-scheduler-event-loop:56386 ] - [ INFO ]  Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 124.0 KB)
+2016-10-10 16:57:51  [ dispatcher-event-loop-3:56388 ] - [ INFO ]  Added broadcast_1_piece0 in memory on localhost:64660 (size: 2.3 KB, free: 1117.9 MB)
+2016-10-10 16:57:51  [ dag-scheduler-event-loop:56391 ] - [ INFO ]  Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+2016-10-10 16:57:51  [ dag-scheduler-event-loop:56685 ] - [ INFO ]  Submitting 10 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at RDDSuite.scala:261)
+2016-10-10 16:57:51  [ dag-scheduler-event-loop:56811 ] - [ INFO ]  Adding task set 0.0 with 10 tasks
+2016-10-10 16:57:52  [ dispatcher-event-loop-0:57838 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:52  [ dispatcher-event-loop-0:57926 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:52  [ dispatcher-event-loop-0:57928 ] - [ INFO ]  Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:52  [ dispatcher-event-loop-0:57932 ] - [ INFO ]  Starting task 3.0 in stage 0.0 (TID 3, localhost, partition 3,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:52  [ Executor task launch worker-1:58023 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-10-10 16:57:52  [ Executor task launch worker-3:58024 ] - [ INFO ]  Running task 3.0 in stage 0.0 (TID 3)
+2016-10-10 16:57:52  [ Executor task launch worker-2:58023 ] - [ INFO ]  Running task 2.0 in stage 0.0 (TID 2)
+2016-10-10 16:57:52  [ Executor task launch worker-0:58023 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-10-10 16:57:53  [ Executor task launch worker-1:58962 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (3).log:0+17
+2016-10-10 16:57:53  [ Executor task launch worker-3:58962 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (5).log:0+17
+2016-10-10 16:57:53  [ Executor task launch worker-2:58969 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (4).log:0+17
+2016-10-10 16:57:53  [ Executor task launch worker-0:58977 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (2).log:0+17
+2016-10-10 16:57:54  [ Executor task launch worker-1:59429 ] - [ INFO ]  mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2016-10-10 16:57:54  [ Executor task launch worker-1:59429 ] - [ INFO ]  mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2016-10-10 16:57:54  [ Executor task launch worker-1:59429 ] - [ INFO ]  mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2016-10-10 16:57:54  [ Executor task launch worker-1:59430 ] - [ INFO ]  mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2016-10-10 16:57:54  [ Executor task launch worker-1:59430 ] - [ INFO ]  mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2016-10-10 16:57:55  [ Executor task launch worker-1:60738 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 2262 bytes result sent to driver
+2016-10-10 16:57:55  [ Executor task launch worker-3:60738 ] - [ INFO ]  Finished task 3.0 in stage 0.0 (TID 3). 2262 bytes result sent to driver
+2016-10-10 16:57:55  [ Executor task launch worker-2:60740 ] - [ INFO ]  Finished task 2.0 in stage 0.0 (TID 2). 2262 bytes result sent to driver
+2016-10-10 16:57:55  [ Executor task launch worker-0:60741 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 2262 bytes result sent to driver
+2016-10-10 16:57:55  [ dispatcher-event-loop-3:60828 ] - [ INFO ]  Starting task 4.0 in stage 0.0 (TID 4, localhost, partition 4,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:55  [ Executor task launch worker-0:60835 ] - [ INFO ]  Running task 4.0 in stage 0.0 (TID 4)
+2016-10-10 16:57:55  [ Executor task launch worker-0:60853 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (6).log:0+17
+2016-10-10 16:57:55  [ dispatcher-event-loop-3:60872 ] - [ INFO ]  Starting task 5.0 in stage 0.0 (TID 5, localhost, partition 5,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:55  [ Executor task launch worker-3:60879 ] - [ INFO ]  Running task 5.0 in stage 0.0 (TID 5)
+2016-10-10 16:57:55  [ dispatcher-event-loop-3:60882 ] - [ INFO ]  Starting task 6.0 in stage 0.0 (TID 6, localhost, partition 6,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:55  [ Executor task launch worker-2:60884 ] - [ INFO ]  Running task 6.0 in stage 0.0 (TID 6)
+2016-10-10 16:57:55  [ Executor task launch worker-2:60893 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (8).log:0+17
+2016-10-10 16:57:55  [ Executor task launch worker-3:60934 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (7).log:0+17
+2016-10-10 16:57:55  [ dispatcher-event-loop-3:60954 ] - [ INFO ]  Starting task 7.0 in stage 0.0 (TID 7, localhost, partition 7,PROCESS_LOCAL, 2141 bytes)
+2016-10-10 16:57:55  [ Executor task launch worker-1:60965 ] - [ INFO ]  Running task 7.0 in stage 0.0 (TID 7)
+2016-10-10 16:57:55  [ Executor task launch worker-1:60985 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本 (9).log:0+17
+2016-10-10 16:57:55  [ task-result-getter-3:61143 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 3487 ms on localhost (1/10)
+2016-10-10 16:57:55  [ task-result-getter-2:61144 ] - [ INFO ]  Finished task 2.0 in stage 0.0 (TID 2) in 3217 ms on localhost (2/10)
+2016-10-10 16:57:55  [ task-result-getter-1:61150 ] - [ INFO ]  Finished task 3.0 in stage 0.0 (TID 3) in 3220 ms on localhost (3/10)
+2016-10-10 16:57:55  [ task-result-getter-0:61153 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 3229 ms on localhost (4/10)
+2016-10-10 16:57:56  [ Executor task launch worker-2:61826 ] - [ INFO ]  Finished task 6.0 in stage 0.0 (TID 6). 2262 bytes result sent to driver
+2016-10-10 16:57:56  [ dispatcher-event-loop-2:61832 ] - [ INFO ]  Starting task 8.0 in stage 0.0 (TID 8, localhost, partition 8,PROCESS_LOCAL, 2137 bytes)
+2016-10-10 16:57:56  [ Executor task launch worker-2:61836 ] - [ INFO ]  Running task 8.0 in stage 0.0 (TID 8)
+2016-10-10 16:57:56  [ task-result-getter-3:61839 ] - [ INFO ]  Finished task 6.0 in stage 0.0 (TID 6) in 958 ms on localhost (5/10)
+2016-10-10 16:57:56  [ Executor task launch worker-2:61854 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111 - 副本.log:0+17
+2016-10-10 16:57:56  [ Executor task launch worker-1:61872 ] - [ INFO ]  Finished task 7.0 in stage 0.0 (TID 7). 2262 bytes result sent to driver
+2016-10-10 16:57:56  [ dispatcher-event-loop-3:61881 ] - [ INFO ]  Starting task 9.0 in stage 0.0 (TID 9, localhost, partition 9,PROCESS_LOCAL, 2128 bytes)
+2016-10-10 16:57:56  [ Executor task launch worker-1:61883 ] - [ INFO ]  Running task 9.0 in stage 0.0 (TID 9)
+2016-10-10 16:57:56  [ Executor task launch worker-1:61891 ] - [ INFO ]  Input split: file:/D:/test/111111111/111111111.log:0+17
+2016-10-10 16:57:56  [ task-result-getter-2:61910 ] - [ INFO ]  Finished task 7.0 in stage 0.0 (TID 7) in 956 ms on localhost (6/10)
+2016-10-10 16:57:56  [ Executor task launch worker-3:61917 ] - [ INFO ]  Finished task 5.0 in stage 0.0 (TID 5). 2262 bytes result sent to driver
+2016-10-10 16:57:56  [ task-result-getter-1:62001 ] - [ INFO ]  Finished task 5.0 in stage 0.0 (TID 5) in 1134 ms on localhost (7/10)
+2016-10-10 16:57:56  [ Executor task launch worker-0:62179 ] - [ INFO ]  Finished task 4.0 in stage 0.0 (TID 4). 2262 bytes result sent to driver
+2016-10-10 16:57:56  [ task-result-getter-0:62185 ] - [ INFO ]  Finished task 4.0 in stage 0.0 (TID 4) in 1389 ms on localhost (8/10)
+2016-10-10 16:57:57  [ Executor task launch worker-1:62381 ] - [ INFO ]  Finished task 9.0 in stage 0.0 (TID 9). 2262 bytes result sent to driver
+2016-10-10 16:57:57  [ task-result-getter-3:62395 ] - [ INFO ]  Finished task 9.0 in stage 0.0 (TID 9) in 515 ms on localhost (9/10)
+2016-10-10 16:57:57  [ Executor task launch worker-2:62421 ] - [ INFO ]  Finished task 8.0 in stage 0.0 (TID 8). 2262 bytes result sent to driver
+2016-10-10 16:57:57  [ task-result-getter-2:62427 ] - [ INFO ]  Finished task 8.0 in stage 0.0 (TID 8) in 596 ms on localhost (10/10)
+2016-10-10 16:57:57  [ task-result-getter-2:62450 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62462 ] - [ INFO ]  ShuffleMapStage 0 (map at RDDSuite.scala:261) finished in 5.257 s
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62477 ] - [ INFO ]  looking for newly runnable stages
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62481 ] - [ INFO ]  running: Set()
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62485 ] - [ INFO ]  waiting: Set(ShuffleMapStage 1, ShuffleMapStage 2, ResultStage 3)
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62528 ] - [ INFO ]  failed: Set()
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62594 ] - [ INFO ]  Submitting ShuffleMapStage 1 (MapPartitionsRDD[5] at map at RDDSuite.scala:264), which has no missing parents
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62809 ] - [ INFO ]  Block broadcast_2 stored as values in memory (estimated size 3.1 KB, free 127.1 KB)
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62813 ] - [ INFO ]  Block broadcast_2_piece0 stored as bytes in memory (estimated size 1811.0 B, free 128.9 KB)
+2016-10-10 16:57:57  [ dispatcher-event-loop-2:62815 ] - [ INFO ]  Added broadcast_2_piece0 in memory on localhost:64660 (size: 1811.0 B, free: 1117.9 MB)
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62816 ] - [ INFO ]  Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62817 ] - [ INFO ]  Submitting 10 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[5] at map at RDDSuite.scala:264)
+2016-10-10 16:57:57  [ dag-scheduler-event-loop:62817 ] - [ INFO ]  Adding task set 1.0 with 10 tasks
+2016-10-10 16:57:57  [ dispatcher-event-loop-0:62912 ] - [ INFO ]  Starting task 0.0 in stage 1.0 (TID 10, localhost, partition 0,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:57:57  [ dispatcher-event-loop-0:62914 ] - [ INFO ]  Starting task 1.0 in stage 1.0 (TID 11, localhost, partition 1,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:57:57  [ dispatcher-event-loop-0:62915 ] - [ INFO ]  Starting task 2.0 in stage 1.0 (TID 12, localhost, partition 2,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:57:57  [ dispatcher-event-loop-0:62916 ] - [ INFO ]  Starting task 3.0 in stage 1.0 (TID 13, localhost, partition 3,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:57:57  [ Executor task launch worker-2:62916 ] - [ INFO ]  Running task 0.0 in stage 1.0 (TID 10)
+2016-10-10 16:57:57  [ Executor task launch worker-1:62917 ] - [ INFO ]  Running task 1.0 in stage 1.0 (TID 11)
+2016-10-10 16:57:57  [ Executor task launch worker-0:62917 ] - [ INFO ]  Running task 2.0 in stage 1.0 (TID 12)
+2016-10-10 16:57:57  [ Executor task launch worker-3:62916 ] - [ INFO ]  Running task 3.0 in stage 1.0 (TID 13)
+2016-10-10 16:57:57  [ Executor task launch worker-3:63103 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:57:57  [ Executor task launch worker-2:63104 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:57:57  [ Executor task launch worker-1:63103 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:57:57  [ Executor task launch worker-0:63103 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:57:57  [ Executor task launch worker-2:63145 ] - [ INFO ]  Started 0 remote fetches in 108 ms
+2016-10-10 16:57:57  [ Executor task launch worker-1:63145 ] - [ INFO ]  Started 0 remote fetches in 110 ms
+2016-10-10 16:57:57  [ Executor task launch worker-3:63145 ] - [ INFO ]  Started 0 remote fetches in 109 ms
+2016-10-10 16:57:57  [ Executor task launch worker-0:63145 ] - [ INFO ]  Started 0 remote fetches in 108 ms
+2016-10-10 16:57:58  [ dispatcher-event-loop-2:63617 ] - [ INFO ]  Removed broadcast_1_piece0 on localhost:64660 in memory (size: 2.3 KB, free: 1117.9 MB)
+2016-10-10 16:58:20  [ driver-heartbeater:86257 ] - [ WARN ]  Error sending message [message = Heartbeat(driver,[Lscala.Tuple2;@4aa99c91,BlockManagerId(driver, localhost, 64660))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10 seconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:499)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply$mcV$sp(Executor.scala:522)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply(Executor.scala:522)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply(Executor.scala:522)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.executor.Executor$$anon$1.run(Executor.scala:522)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:107)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:107)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+2016-10-10 16:58:21  [ heartbeat-receiver-event-loop-thread:86427 ] - [ WARN ]  Ignored message: HeartbeatResponse(false)
+2016-10-10 16:58:27  [ Executor task launch worker-2:92591 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 10). 1383 bytes result sent to driver
+2016-10-10 16:58:27  [ Executor task launch worker-1:92592 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 11). 1383 bytes result sent to driver
+2016-10-10 16:58:27  [ Executor task launch worker-3:92630 ] - [ INFO ]  Finished task 3.0 in stage 1.0 (TID 13). 1383 bytes result sent to driver
+2016-10-10 16:58:27  [ dispatcher-event-loop-3:92922 ] - [ INFO ]  Starting task 4.0 in stage 1.0 (TID 14, localhost, partition 4,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:58:27  [ dispatcher-event-loop-3:92924 ] - [ INFO ]  Starting task 5.0 in stage 1.0 (TID 15, localhost, partition 5,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:58:27  [ dispatcher-event-loop-3:92926 ] - [ INFO ]  Starting task 6.0 in stage 1.0 (TID 16, localhost, partition 6,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:58:27  [ Executor task launch worker-2:92927 ] - [ INFO ]  Running task 6.0 in stage 1.0 (TID 16)
+2016-10-10 16:58:27  [ task-result-getter-1:92968 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 10) in 30092 ms on localhost (1/10)
+2016-10-10 16:58:27  [ task-result-getter-1:92970 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 11) in 30056 ms on localhost (2/10)
+2016-10-10 16:58:27  [ task-result-getter-1:92971 ] - [ INFO ]  Finished task 3.0 in stage 1.0 (TID 13) in 30056 ms on localhost (3/10)
+2016-10-10 16:58:27  [ Executor task launch worker-1:92971 ] - [ INFO ]  Running task 5.0 in stage 1.0 (TID 15)
+2016-10-10 16:58:27  [ Executor task launch worker-1:92977 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:58:27  [ Executor task launch worker-1:92977 ] - [ INFO ]  Started 0 remote fetches in 0 ms
+2016-10-10 16:58:27  [ Executor task launch worker-3:92996 ] - [ INFO ]  Running task 4.0 in stage 1.0 (TID 14)
+2016-10-10 16:58:27  [ Executor task launch worker-3:93024 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:58:27  [ Executor task launch worker-3:93024 ] - [ INFO ]  Started 0 remote fetches in 0 ms
+2016-10-10 16:58:27  [ Executor task launch worker-1:93086 ] - [ INFO ]  Finished task 5.0 in stage 1.0 (TID 15). 1383 bytes result sent to driver
+2016-10-10 16:58:27  [ dispatcher-event-loop-3:93100 ] - [ INFO ]  Starting task 7.0 in stage 1.0 (TID 17, localhost, partition 7,NODE_LOCAL, 1883 bytes)
+2016-10-10 16:58:27  [ task-result-getter-2:93123 ] - [ INFO ]  Finished task 5.0 in stage 1.0 (TID 15) in 199 ms on localhost (4/10)
+2016-10-10 16:58:27  [ Executor task launch worker-2:92935 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:58:27  [ Executor task launch worker-2:93124 ] - [ INFO ]  Started 0 remote fetches in 189 ms
+2016-10-10 16:58:27  [ Executor task launch worker-1:93161 ] - [ INFO ]  Running task 7.0 in stage 1.0 (TID 17)
+2016-10-10 16:58:27  [ Executor task launch worker-1:93191 ] - [ INFO ]  Getting 10 non-empty blocks out of 10 blocks
+2016-10-10 16:58:27  [ Executor task launch worker-1:93192 ] - [ INFO ]  Started 0 remote fetches in 1 ms

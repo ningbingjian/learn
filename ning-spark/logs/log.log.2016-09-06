@@ -1,0 +1,69 @@
+2016-09-06 09:39:03  [ shuffle-client-0:0 ] - [ ERROR ]  Connection to /192.168.199.144:60497 has been quiet for 2000 ms while there are outstanding requests. Assuming connection is dead; please adjust spark.network.timeout if this is wrong.
+2016-09-06 09:39:05  [ shuffle-client-0:1932 ] - [ ERROR ]  Failed to send request StreamChunkId{streamId=0, chunkIndex=1} to /192.168.199.144:60497: java.nio.channels.ClosedChannelException
+java.nio.channels.ClosedChannelException
+2016-09-06 09:39:05  [ shuffle-client-0:1961 ] - [ ERROR ]  Still have 1 requests outstanding when connection from /192.168.199.144:60497 is closed
+2016-09-06 09:42:10  [ shuffle-client-0:0 ] - [ ERROR ]  Connection to /192.168.199.144:60639 has been quiet for 2000 ms while there are outstanding requests. Assuming connection is dead; please adjust spark.network.timeout if this is wrong.
+2016-09-06 09:42:10  [ shuffle-client-0:4 ] - [ ERROR ]  Still have 2 requests outstanding when connection from /192.168.199.144:60639 is closed
+2016-09-06 09:55:21  [ shuffle-client-0:1 ] - [ ERROR ]  Still have 2 requests outstanding when connection from /192.168.199.144:61191 is closed
+2016-09-06 09:58:42  [ shuffle-client-0:0 ] - [ ERROR ]  Connection to /192.168.199.144:61322 has been quiet for 2000 ms while there are outstanding requests. Assuming connection is dead; please adjust spark.network.timeout if this is wrong.
+2016-09-06 09:58:42  [ shuffle-client-0:6 ] - [ ERROR ]  Still have 2 requests outstanding when connection from /192.168.199.144:61322 is closed
+2016-09-06 10:04:48  [ shuffle-client-0:1 ] - [ ERROR ]  Connection to /192.168.199.144:61529 has been quiet for 2000 ms while there are outstanding requests. Assuming connection is dead; please adjust spark.network.timeout if this is wrong.
+2016-09-06 10:04:48  [ shuffle-client-0:5 ] - [ ERROR ]  Still have 1 requests outstanding when connection from /192.168.199.144:61529 is closed
+2016-09-06 10:05:46  [ shuffle-server-1:58146 ] - [ ERROR ]  Error sending result ChunkFetchSuccess{streamChunkId=StreamChunkId{streamId=0, chunkIndex=0}, buffer=NioManagedBuffer{buf=java.nio.HeapByteBuffer[pos=0 lim=16 cap=16]}} to /192.168.199.144:61546; closing connection
+java.io.IOException: 您的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:470)
+	at ning.network.protocol.MessageWithHeader.copyByteBuf(MessageWithHeader.java:105)
+	at ning.network.protocol.MessageWithHeader.transferTo(MessageWithHeader.java:91)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:254)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite(AbstractNioByteChannel.java:237)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:281)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:761)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:311)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:729)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:663)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:644)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:663)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:644)
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:117)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:663)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:693)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:681)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:716)
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:954)
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:244)
+	at ning.network.server.TransportRequestHandler.respond(TransportRequestHandler.java:173)
+	at ning.network.server.TransportRequestHandler.processFetchRequest(TransportRequestHandler.java:118)
+	at ning.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:89)
+	at ning.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:104)
+	at ning.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:51)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at ning.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Thread.java:745)
+2016-09-06 10:06:46  [ shuffle-client-0:117916 ] - [ ERROR ]  Failed to send request StreamChunkId{streamId=0, chunkIndex=1} to /192.168.199.144:61529: java.nio.channels.ClosedChannelException
+java.nio.channels.ClosedChannelException
+2016-09-06 11:02:17  [ shuffle-client-0:0 ] - [ ERROR ]  Still have 1 requests outstanding when connection from /192.168.199.144:63145 is closed
+2016-09-06 11:37:11  [ shuffle-client-0:0 ] - [ ERROR ]  Still have 1 requests outstanding when connection from /192.168.199.144:64617 is closed
+2016-09-06 11:38:01  [ shuffle-client-0:2 ] - [ ERROR ]  Still have 1 requests outstanding when connection from /192.168.199.144:64673 is closed

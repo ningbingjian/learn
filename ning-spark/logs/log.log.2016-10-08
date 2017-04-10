@@ -1,0 +1,139 @@
+2016-10-08 17:42:10  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-10-08 17:42:13  [ ScalaTest-run:3105 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-10-08 17:42:14  [ ScalaTest-run:4437 ] - [ INFO ]  Changing view acls to: ning
+2016-10-08 17:42:14  [ ScalaTest-run:4439 ] - [ INFO ]  Changing modify acls to: ning
+2016-10-08 17:42:14  [ ScalaTest-run:4444 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-10-08 17:42:18  [ ScalaTest-run:8569 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 63810.
+2016-10-08 17:42:21  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:11453 ] - [ INFO ]  Slf4jLogger started
+2016-10-08 17:42:22  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:11874 ] - [ INFO ]  Starting remoting
+2016-10-08 17:42:23  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:13065 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:63832]
+2016-10-08 17:42:23  [ ScalaTest-run:13113 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 63832.
+2016-10-08 17:42:23  [ ScalaTest-run:13152 ] - [ INFO ]  Registering MapOutputTracker
+2016-10-08 17:42:23  [ ScalaTest-run:13207 ] - [ INFO ]  Registering BlockManagerMaster
+2016-10-08 17:42:23  [ ScalaTest-run:13527 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-f980091a-a792-4804-ad24-8b81cdbc222c
+2016-10-08 17:43:01  [ ScalaTest-run:51502 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-10-08 17:43:02  [ ScalaTest-run:51937 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-10-08 17:43:03  [ ScalaTest-run:53119 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-10-08 17:43:03  [ ScalaTest-run:53265 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-10-08 17:43:03  [ ScalaTest-run:53266 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-10-08 17:43:03  [ ScalaTest-run:53278 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-10-08 17:43:05  [ ScalaTest-run:54954 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-10-08 17:43:05  [ ScalaTest-run:55095 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 63938.
+2016-10-08 17:43:05  [ ScalaTest-run:55099 ] - [ INFO ]  Server created on 63938
+2016-10-08 17:43:05  [ ScalaTest-run:55106 ] - [ INFO ]  Trying to register BlockManager
+2016-10-08 17:43:05  [ dispatcher-event-loop-2:55117 ] - [ INFO ]  Registering block manager localhost:63938 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 63938)
+2016-10-08 17:43:05  [ ScalaTest-run:55126 ] - [ INFO ]  Registered BlockManager
+2016-10-08 17:43:08  [ ScalaTest-run-running-RDDSuite:58345 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR ning.spark.suite.RDDSuite: 'RDD' =====
+
+2016-10-08 17:43:11  [ ScalaTest-run-running-RDDSuite:61094 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 107.7 KB, free 107.7 KB)
+2016-10-08 17:43:47  [ ScalaTest-run-running-RDDSuite:96719 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 9.8 KB, free 117.5 KB)
+2016-10-08 17:44:41  [ dispatcher-event-loop-1:151570 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:63938 (size: 9.8 KB, free: 1117.9 MB)
+2016-10-08 17:44:42  [ ScalaTest-run-running-RDDSuite:151901 ] - [ INFO ]  Created broadcast 0 from textFile at RDDSuite.scala:258
+2016-10-08 17:44:43  [ ScalaTest-run-running-RDDSuite:152755 ] - [ ERROR ]  Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:278)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:300)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:293)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:76)
+	at org.apache.hadoop.mapred.FileInputFormat.setInputPaths(FileInputFormat.java:362)
+	at org.apache.spark.SparkContext$$anonfun$hadoopFile$1$$anonfun$33.apply(SparkContext.scala:1018)
+	at org.apache.spark.SparkContext$$anonfun$hadoopFile$1$$anonfun$33.apply(SparkContext.scala:1018)
+	at org.apache.spark.rdd.HadoopRDD$$anonfun$getJobConf$6.apply(HadoopRDD.scala:176)
+	at org.apache.spark.rdd.HadoopRDD$$anonfun$getJobConf$6.apply(HadoopRDD.scala:176)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.spark.rdd.HadoopRDD.getJobConf(HadoopRDD.scala:176)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:195)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.Partitioner$.defaultPartitioner(Partitioner.scala:65)
+	at org.apache.spark.rdd.PairRDDFunctions$$anonfun$reduceByKey$3.apply(PairRDDFunctions.scala:331)
+	at org.apache.spark.rdd.PairRDDFunctions$$anonfun$reduceByKey$3.apply(PairRDDFunctions.scala:331)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:150)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:111)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:316)
+	at org.apache.spark.rdd.PairRDDFunctions.reduceByKey(PairRDDFunctions.scala:330)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply$mcV$sp(RDDSuite.scala:261)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply(RDDSuite.scala:267)
+	at ning.spark.suite.RDDSuite$$anonfun$24.apply(RDDSuite.scala:267)
+	at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+	at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:166)
+	at ning.spark.suite.SparkFunSuite.withFixture(SparkFunSuite.scala:16)
+	at org.scalatest.FunSuiteLike$class.invokeWithFixture$1(FunSuiteLike.scala:163)
+	at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)
+	at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:306)
+	at org.scalatest.FunSuiteLike$class.runTest(FunSuiteLike.scala:175)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1555)
+	at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)
+	at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)
+	at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:413)
+	at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:401)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:401)
+	at org.scalatest.SuperEngine.org$scalatest$SuperEngine$$runTestsInBranch(Engine.scala:396)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:483)
+	at org.scalatest.FunSuiteLike$class.runTests(FunSuiteLike.scala:208)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1555)
+	at org.scalatest.Suite$class.run(Suite.scala:1424)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1555)
+	at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)
+	at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:545)
+	at org.scalatest.FunSuiteLike$class.run(FunSuiteLike.scala:212)
+	at ning.spark.suite.RDDSuite.org$scalatest$BeforeAndAfterAll$$super$run(RDDSuite.scala:27)
+	at org.scalatest.BeforeAndAfterAll$class.liftedTree1$1(BeforeAndAfterAll.scala:257)
+	at org.scalatest.BeforeAndAfterAll$class.run(BeforeAndAfterAll.scala:256)
+	at ning.spark.suite.RDDSuite.run(RDDSuite.scala:27)
+	at org.scalatest.tools.SuiteRunner.run(SuiteRunner.scala:55)
+	at org.scalatest.tools.Runner$$anonfun$doRunRunRunDaDoRunRun$3.apply(Runner.scala:2563)
+	at org.scalatest.tools.Runner$$anonfun$doRunRunRunDaDoRunRun$3.apply(Runner.scala:2557)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.scalatest.tools.Runner$.doRunRunRunDaDoRunRun(Runner.scala:2557)
+	at org.scalatest.tools.Runner$$anonfun$runOptionallyWithPassFailReporter$2.apply(Runner.scala:1044)
+	at org.scalatest.tools.Runner$$anonfun$runOptionallyWithPassFailReporter$2.apply(Runner.scala:1043)
+	at org.scalatest.tools.Runner$.withClassLoaderAndDispatchReporter(Runner.scala:2722)
+	at org.scalatest.tools.Runner$.runOptionallyWithPassFailReporter(Runner.scala:1043)
+	at org.scalatest.tools.Runner$.run(Runner.scala:883)
+	at org.scalatest.tools.Runner.run(Runner.scala)
+	at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.runScalaTest2(ScalaTestRunner.java:138)
+	at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.main(ScalaTestRunner.java:28)
+2016-10-08 17:44:44  [ ScalaTest-run-running-RDDSuite:154199 ] - [ WARN ]  Your hostname, ning-PC resolves to a loopback/non-reachable address: fe80:0:0:0:0:5efe:c0a8:c790%net10, but we couldn't find any external IP address!
+2016-10-08 17:44:46  [ ScalaTest-run-running-RDDSuite:156146 ] - [ INFO ]  Total input paths to process : 1
+2016-10-08 17:44:47  [ ScalaTest-run-running-RDDSuite:157073 ] - [ INFO ]  Starting job: collect at RDDSuite.scala:266
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157267 ] - [ INFO ]  Registering RDD 3 (map at RDDSuite.scala:260)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157270 ] - [ INFO ]  Registering RDD 5 (map at RDDSuite.scala:262)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157271 ] - [ INFO ]  Registering RDD 7 (map at RDDSuite.scala:264)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157281 ] - [ INFO ]  Got job 0 (collect at RDDSuite.scala:266) with 3 output partitions
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157284 ] - [ INFO ]  Final stage: ResultStage 3 (collect at RDDSuite.scala:266)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157288 ] - [ INFO ]  Parents of final stage: List(ShuffleMapStage 2)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157296 ] - [ INFO ]  Missing parents: List(ShuffleMapStage 2)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157336 ] - [ INFO ]  Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at RDDSuite.scala:260), which has no missing parents
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157487 ] - [ INFO ]  Block broadcast_1 stored as values in memory (estimated size 4.2 KB, free 121.6 KB)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157503 ] - [ INFO ]  Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 124.0 KB)
+2016-10-08 17:44:47  [ dispatcher-event-loop-3:157507 ] - [ INFO ]  Added broadcast_1_piece0 in memory on localhost:63938 (size: 2.3 KB, free: 1117.9 MB)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157509 ] - [ INFO ]  Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157527 ] - [ INFO ]  Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at RDDSuite.scala:260)
+2016-10-08 17:44:47  [ dag-scheduler-event-loop:157538 ] - [ INFO ]  Adding task set 0.0 with 3 tasks

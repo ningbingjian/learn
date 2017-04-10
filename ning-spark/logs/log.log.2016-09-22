@@ -1,0 +1,1229 @@
+2016-09-22 10:14:31  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:14:35  [ ScalaTest-run:3314 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:14:36  [ ScalaTest-run:4963 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:14:36  [ ScalaTest-run:4981 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:14:36  [ ScalaTest-run:4994 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:14:42  [ ScalaTest-run:11052 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 59351.
+2016-09-22 10:14:45  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:13731 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:14:47  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:15181 ] - [ INFO ]  Starting remoting
+2016-09-22 10:14:48  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:16179 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:59365]
+2016-09-22 10:14:48  [ ScalaTest-run:16264 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 59365.
+2016-09-22 10:14:48  [ ScalaTest-run:16638 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:14:49  [ ScalaTest-run:17556 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:14:49  [ ScalaTest-run:17782 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-a60acecb-a6b5-42e0-8c1e-404a43adba53
+2016-09-22 10:14:50  [ ScalaTest-run:18117 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:14:51  [ ScalaTest-run:19259 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:14:53  [ ScalaTest-run:21517 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:14:53  [ ScalaTest-run:21710 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:14:53  [ ScalaTest-run:21711 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:14:53  [ ScalaTest-run:21793 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:14:55  [ ScalaTest-run:23280 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:14:55  [ ScalaTest-run:23774 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59389.
+2016-09-22 10:14:55  [ ScalaTest-run:23784 ] - [ INFO ]  Server created on 59389
+2016-09-22 10:14:55  [ ScalaTest-run:23870 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:14:55  [ dispatcher-event-loop-3:23920 ] - [ INFO ]  Registering block manager localhost:59389 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 59389)
+2016-09-22 10:14:55  [ ScalaTest-run:23957 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:14:58  [ ScalaTest-run-running-RDDSuite:26979 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:15:02  [ ScalaTest-run-running-RDDSuite:30183 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:15:02  [ dag-scheduler-event-loop:30588 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:15:02  [ dag-scheduler-event-loop:30594 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:15:02  [ dag-scheduler-event-loop:30600 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:15:02  [ dag-scheduler-event-loop:30617 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:15:02  [ dag-scheduler-event-loop:30979 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:15:05  [ dag-scheduler-event-loop:33464 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.4 KB, free 2.4 KB)
+2016-09-22 10:15:05  [ dag-scheduler-event-loop:33731 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1513.0 B, free 3.9 KB)
+2016-09-22 10:15:05  [ dispatcher-event-loop-0:33768 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:59389 (size: 1513.0 B, free: 1117.9 MB)
+2016-09-22 10:15:05  [ dag-scheduler-event-loop:33854 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:15:05  [ dag-scheduler-event-loop:34039 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:15:05  [ dag-scheduler-event-loop:34076 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:15:07  [ dispatcher-event-loop-2:35212 ] - [ WARN ]  Stage 0 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:15:07  [ dispatcher-event-loop-2:35217 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:15:07  [ dispatcher-event-loop-2:35286 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:15:07  [ Executor task launch worker-0:35473 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:15:07  [ Executor task launch worker-1:35475 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:15:08  [ Executor task launch worker-1:36850 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
+2016-09-22 10:15:08  [ Executor task launch worker-0:36851 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+2016-09-22 10:15:09  [ task-result-getter-0:37092 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 1729 ms on localhost (1/2)
+2016-09-22 10:15:09  [ task-result-getter-1:37094 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 2384 ms on localhost (2/2)
+2016-09-22 10:15:09  [ task-result-getter-1:37154 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:15:09  [ dag-scheduler-event-loop:37252 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 2.898 s
+2016-09-22 10:15:09  [ ScalaTest-run-running-RDDSuite:37419 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 7.234365 s
+2016-09-22 10:15:09  [ ScalaTest-run-running-RDDSuite:37676 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:15:09  [ ScalaTest-run:38040 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38041 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38041 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38042 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38043 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38043 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38044 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38044 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38045 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38045 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38046 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38046 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38047 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38047 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38050 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38054 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38054 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38055 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38055 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38057 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38057 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38057 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38058 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38058 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:15:09  [ ScalaTest-run:38059 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:15:10  [ ScalaTest-run:38227 ] - [ WARN ]  6 threads could not be stopped
+2016-09-22 10:15:10  [ ScalaTest-run:38273 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:15:10  [ dispatcher-event-loop-2:38805 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:15:10  [ ScalaTest-run:38972 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:15:10  [ ScalaTest-run:38990 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:15:11  [ ScalaTest-run:39366 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:15:11  [ dispatcher-event-loop-0:39476 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:15:11  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:39537 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:15:11  [ ScalaTest-run:39542 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:15:11  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:39551 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:15:11  [ Thread-3:39802 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:15:11  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:39828 ] - [ INFO ]  Remoting shut down.
+2016-09-22 10:15:11  [ Thread-3:40052 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-71f1cdb5-07b8-48f7-ab7f-9cf480cc5cb9
+2016-09-22 10:20:45  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:20:46  [ ScalaTest-run:1005 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:20:46  [ ScalaTest-run:1182 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:20:46  [ ScalaTest-run:1183 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:20:46  [ ScalaTest-run:1185 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:20:49  [ ScalaTest-run:3467 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 59589.
+2016-09-22 10:20:50  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4700 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:20:50  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4889 ] - [ INFO ]  Starting remoting
+2016-09-22 10:20:51  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:5544 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:59602]
+2016-09-22 10:20:51  [ ScalaTest-run:5557 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 59602.
+2016-09-22 10:20:51  [ ScalaTest-run:5635 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:20:51  [ ScalaTest-run:5742 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:20:51  [ ScalaTest-run:5804 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-c78ac720-15da-4e77-b01b-e3c35075ff40
+2016-09-22 10:20:51  [ ScalaTest-run:5886 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:20:51  [ ScalaTest-run:6229 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:20:52  [ ScalaTest-run:6886 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:20:52  [ ScalaTest-run:7010 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:20:52  [ ScalaTest-run:7011 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:20:52  [ ScalaTest-run:7022 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:20:52  [ ScalaTest-run:7329 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:20:52  [ ScalaTest-run:7420 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59623.
+2016-09-22 10:20:52  [ ScalaTest-run:7422 ] - [ INFO ]  Server created on 59623
+2016-09-22 10:20:52  [ ScalaTest-run:7426 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:20:52  [ dispatcher-event-loop-2:7435 ] - [ INFO ]  Registering block manager localhost:59623 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 59623)
+2016-09-22 10:20:52  [ ScalaTest-run:7441 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:20:53  [ ScalaTest-run-running-RDDSuite:8096 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:20:54  [ ScalaTest-run-running-RDDSuite:9214 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:20:54  [ dag-scheduler-event-loop:9289 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:20:54  [ dag-scheduler-event-loop:9292 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:20:54  [ dag-scheduler-event-loop:9294 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:20:54  [ dag-scheduler-event-loop:9302 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:20:54  [ dag-scheduler-event-loop:9342 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:20:55  [ dag-scheduler-event-loop:10042 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.4 KB, free 2.4 KB)
+2016-09-22 10:20:55  [ dag-scheduler-event-loop:10099 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1513.0 B, free 3.9 KB)
+2016-09-22 10:20:55  [ dispatcher-event-loop-0:10113 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:59623 (size: 1513.0 B, free: 1117.9 MB)
+2016-09-22 10:20:55  [ dag-scheduler-event-loop:10123 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:20:55  [ dag-scheduler-event-loop:10147 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:20:55  [ dag-scheduler-event-loop:10158 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:20:55  [ dispatcher-event-loop-1:10391 ] - [ WARN ]  Stage 0 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:20:55  [ dispatcher-event-loop-1:10395 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:20:55  [ dispatcher-event-loop-1:10412 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:20:55  [ Executor task launch worker-1:10439 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:20:55  [ Executor task launch worker-0:10439 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:20:56  [ Executor task launch worker-0:10747 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+2016-09-22 10:20:56  [ Executor task launch worker-1:10750 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
+2016-09-22 10:20:56  [ task-result-getter-0:10789 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 490 ms on localhost (1/2)
+2016-09-22 10:20:56  [ task-result-getter-1:10798 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 393 ms on localhost (2/2)
+2016-09-22 10:20:56  [ task-result-getter-1:10806 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:20:56  [ dag-scheduler-event-loop:11098 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.879 s
+2016-09-22 10:20:56  [ ScalaTest-run-running-RDDSuite:11124 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.908868 s
+2016-09-22 10:20:56  [ ScalaTest-run-running-RDDSuite:11179 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:20:56  [ ScalaTest-run:11262 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11263 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11263 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11266 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11266 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11267 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11267 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11268 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11268 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11269 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11269 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11269 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11270 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11271 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11272 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11272 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11272 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11273 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11273 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11274 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11274 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11274 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11275 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11276 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11276 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:20:56  [ ScalaTest-run:11334 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:20:56  [ dispatcher-event-loop-3:11413 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:20:57  [ ScalaTest-run:11469 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:20:57  [ ScalaTest-run:11473 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:20:57  [ ScalaTest-run:11505 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:20:57  [ dispatcher-event-loop-0:11516 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:20:57  [ ScalaTest-run:11546 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:20:57  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:11553 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:20:57  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:11554 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:20:57  [ Thread-3:11786 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:20:57  [ Thread-3:11791 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-f4a187db-0032-4c62-99ab-b8268132f0a5
+2016-09-22 10:21:30  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:21:31  [ ScalaTest-run:1491 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:21:32  [ ScalaTest-run:1792 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:21:32  [ ScalaTest-run:1793 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:21:32  [ ScalaTest-run:1795 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:21:34  [ ScalaTest-run:3677 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 59666.
+2016-09-22 10:21:35  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4619 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:21:35  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4772 ] - [ INFO ]  Starting remoting
+2016-09-22 10:21:35  [ sparkDriverActorSystem-akka.actor.default-dispatcher-6:5447 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:59680]
+2016-09-22 10:21:35  [ ScalaTest-run:5458 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 59680.
+2016-09-22 10:21:35  [ ScalaTest-run:5503 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:21:36  [ ScalaTest-run:5603 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:21:36  [ ScalaTest-run:5643 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-1f6a064d-766d-43e1-a8e7-d3268e6e185c
+2016-09-22 10:21:36  [ ScalaTest-run:5790 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:21:36  [ ScalaTest-run:6010 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:21:37  [ ScalaTest-run:6610 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:21:37  [ ScalaTest-run:6784 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:21:37  [ ScalaTest-run:6784 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:21:37  [ ScalaTest-run:6798 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:21:37  [ ScalaTest-run:7111 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:21:37  [ ScalaTest-run:7204 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59700.
+2016-09-22 10:21:37  [ ScalaTest-run:7206 ] - [ INFO ]  Server created on 59700
+2016-09-22 10:21:37  [ ScalaTest-run:7253 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:21:37  [ dispatcher-event-loop-2:7263 ] - [ INFO ]  Registering block manager localhost:59700 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 59700)
+2016-09-22 10:21:37  [ ScalaTest-run:7270 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:21:38  [ ScalaTest-run-running-RDDSuite:8023 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:21:39  [ ScalaTest-run-running-RDDSuite:9022 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9086 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9088 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9090 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9096 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9116 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9497 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.4 KB, free 2.4 KB)
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9524 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1513.0 B, free 3.9 KB)
+2016-09-22 10:21:39  [ dispatcher-event-loop-0:9531 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:59700 (size: 1513.0 B, free: 1117.9 MB)
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9537 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:21:39  [ dag-scheduler-event-loop:9556 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:21:40  [ dag-scheduler-event-loop:9564 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:21:40  [ dispatcher-event-loop-1:9716 ] - [ WARN ]  Stage 0 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:21:40  [ dispatcher-event-loop-1:9719 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:21:40  [ dispatcher-event-loop-1:9743 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:21:40  [ Executor task launch worker-0:9768 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:21:40  [ Executor task launch worker-1:9775 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:21:40  [ Executor task launch worker-1:9952 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
+2016-09-22 10:21:40  [ Executor task launch worker-0:9952 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+2016-09-22 10:21:40  [ task-result-getter-1:9974 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 329 ms on localhost (1/2)
+2016-09-22 10:21:40  [ task-result-getter-0:9975 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 248 ms on localhost (2/2)
+2016-09-22 10:21:40  [ task-result-getter-0:9979 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:21:40  [ dag-scheduler-event-loop:10210 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.605 s
+2016-09-22 10:21:40  [ ScalaTest-run-running-RDDSuite:10306 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.283002 s
+2016-09-22 10:21:40  [ ScalaTest-run-running-RDDSuite:10354 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:21:40  [ ScalaTest-run:10419 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10419 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10420 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10420 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10420 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10420 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10421 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10421 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10421 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10422 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10422 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10422 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10422 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10423 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10423 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10425 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10426 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10426 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10426 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10426 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10427 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10427 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10427 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10428 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10428 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:21:40  [ ScalaTest-run:10483 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:21:40  [ dispatcher-event-loop-1:10512 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:21:40  [ ScalaTest-run:10544 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:21:40  [ ScalaTest-run:10546 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:21:41  [ ScalaTest-run:10568 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:21:41  [ dispatcher-event-loop-1:10575 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:21:41  [ ScalaTest-run:10586 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:21:41  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10599 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:21:41  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10605 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:21:41  [ Thread-3:10619 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:21:41  [ Thread-3:10622 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-2e29dee7-feb8-4988-a429-0a7a9ae5a88c
+2016-09-22 10:23:30  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:23:31  [ ScalaTest-run:1425 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:23:32  [ ScalaTest-run:1694 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:23:32  [ ScalaTest-run:1696 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:23:32  [ ScalaTest-run:1698 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:23:33  [ ScalaTest-run:3404 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 59785.
+2016-09-22 10:23:34  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:4579 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:23:35  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:4797 ] - [ INFO ]  Starting remoting
+2016-09-22 10:23:36  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:5763 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:59799]
+2016-09-22 10:23:36  [ ScalaTest-run:5777 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 59799.
+2016-09-22 10:23:36  [ ScalaTest-run:5812 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:23:36  [ ScalaTest-run:5863 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:23:36  [ ScalaTest-run:5890 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-4d8ea0f4-4d68-4102-816e-fc1e12128dbf
+2016-09-22 10:23:36  [ ScalaTest-run:5930 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:23:36  [ ScalaTest-run:6130 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:23:37  [ ScalaTest-run:6682 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:23:37  [ ScalaTest-run:6810 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:23:37  [ ScalaTest-run:6810 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:23:37  [ ScalaTest-run:6835 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:23:37  [ ScalaTest-run:7171 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:23:37  [ ScalaTest-run:7276 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59818.
+2016-09-22 10:23:37  [ ScalaTest-run:7278 ] - [ INFO ]  Server created on 59818
+2016-09-22 10:23:37  [ ScalaTest-run:7284 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:23:37  [ dispatcher-event-loop-2:7304 ] - [ INFO ]  Registering block manager localhost:59818 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 59818)
+2016-09-22 10:23:37  [ ScalaTest-run:7314 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:23:38  [ ScalaTest-run-running-RDDSuite:8013 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:23:39  [ ScalaTest-run-running-RDDSuite:8968 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9024 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9025 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9027 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9032 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9055 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9475 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.4 KB, free 2.4 KB)
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9501 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1513.0 B, free 3.9 KB)
+2016-09-22 10:23:39  [ dispatcher-event-loop-0:9508 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:59818 (size: 1513.0 B, free: 1117.9 MB)
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9513 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9523 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:23:39  [ dag-scheduler-event-loop:9527 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:23:40  [ dispatcher-event-loop-1:9712 ] - [ WARN ]  Stage 0 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:23:40  [ dispatcher-event-loop-1:9716 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:23:40  [ dispatcher-event-loop-1:9730 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:23:40  [ Executor task launch worker-1:9760 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:23:40  [ Executor task launch worker-0:9760 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:23:40  [ Executor task launch worker-0:10057 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+2016-09-22 10:23:40  [ Executor task launch worker-1:10068 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
+2016-09-22 10:23:40  [ task-result-getter-0:10082 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 488 ms on localhost (1/2)
+2016-09-22 10:23:40  [ task-result-getter-1:10086 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 359 ms on localhost (2/2)
+2016-09-22 10:23:40  [ task-result-getter-1:10090 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10150 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.593 s
+2016-09-22 10:23:40  [ ScalaTest-run-running-RDDSuite:10170 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.200493 s
+2016-09-22 10:23:40  [ ScalaTest-run-running-RDDSuite:10219 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10222 ] - [ INFO ]  Got job 1 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10222 ] - [ INFO ]  Final stage: ResultStage 1 (apply at Transformer.scala:22)
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10222 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10223 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10224 ] - [ INFO ]  Submitting ResultStage 1 (MapPartitionsRDD[2] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10228 ] - [ INFO ]  Block broadcast_1 stored as values in memory (estimated size 2.4 KB, free 6.2 KB)
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10235 ] - [ INFO ]  Block broadcast_1_piece0 stored as bytes in memory (estimated size 1510.0 B, free 7.7 KB)
+2016-09-22 10:23:40  [ dispatcher-event-loop-3:10241 ] - [ INFO ]  Added broadcast_1_piece0 in memory on localhost:59818 (size: 1510.0 B, free: 1117.9 MB)
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10251 ] - [ INFO ]  Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10252 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 1 (MapPartitionsRDD[2] at apply at Transformer.scala:22)
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10254 ] - [ INFO ]  Adding task set 1.0 with 2 tasks
+2016-09-22 10:23:40  [ dispatcher-event-loop-2:10258 ] - [ WARN ]  Stage 1 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:23:40  [ dispatcher-event-loop-2:10259 ] - [ INFO ]  Starting task 0.0 in stage 1.0 (TID 2, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:23:40  [ dispatcher-event-loop-2:10262 ] - [ INFO ]  Starting task 1.0 in stage 1.0 (TID 3, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:23:40  [ Executor task launch worker-0:10263 ] - [ INFO ]  Running task 1.0 in stage 1.0 (TID 3)
+2016-09-22 10:23:40  [ Executor task launch worker-1:10273 ] - [ INFO ]  Running task 0.0 in stage 1.0 (TID 2)
+2016-09-22 10:23:40  [ Executor task launch worker-1:10291 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 2). 1360 bytes result sent to driver
+2016-09-22 10:23:40  [ Executor task launch worker-0:10339 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 3). 1360 bytes result sent to driver
+2016-09-22 10:23:40  [ task-result-getter-3:10365 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 3) in 104 ms on localhost (1/2)
+2016-09-22 10:23:40  [ task-result-getter-2:10378 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 2) in 121 ms on localhost (2/2)
+2016-09-22 10:23:40  [ task-result-getter-2:10378 ] - [ INFO ]  Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2016-09-22 10:23:40  [ dag-scheduler-event-loop:10384 ] - [ INFO ]  ResultStage 1 (apply at Transformer.scala:22) finished in 0.129 s
+2016-09-22 10:23:40  [ ScalaTest-run-running-RDDSuite:10387 ] - [ INFO ]  Job 1 finished: apply at Transformer.scala:22, took 0.166426 s
+2016-09-22 10:23:40  [ ScalaTest-run-running-RDDSuite:10403 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:23:40  [ ScalaTest-run:10483 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10483 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10483 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10484 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10484 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10484 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10484 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10485 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10485 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10485 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10486 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10486 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10486 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10486 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10487 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10487 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10487 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10488 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10488 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10488 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10488 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10489 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10489 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10489 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10489 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:23:40  [ ScalaTest-run:10545 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:23:40  [ dispatcher-event-loop-2:10600 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:23:41  [ ScalaTest-run:10643 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:23:41  [ ScalaTest-run:10646 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:23:41  [ ScalaTest-run:10664 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:23:41  [ dispatcher-event-loop-2:10673 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:23:41  [ ScalaTest-run:10687 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:23:41  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:10687 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:23:41  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:10691 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:23:41  [ Thread-3:10716 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:23:41  [ Thread-3:10719 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-e84c6058-9477-4d6c-9dc1-1eaaeb309ecb
+2016-09-22 10:24:58  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:24:59  [ ScalaTest-run:953 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:24:59  [ ScalaTest-run:1133 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:24:59  [ ScalaTest-run:1134 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:24:59  [ ScalaTest-run:1135 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:25:01  [ ScalaTest-run:2703 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 59930.
+2016-09-22 10:25:02  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:3910 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:25:03  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:4302 ] - [ INFO ]  Starting remoting
+2016-09-22 10:25:04  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:5506 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:59949]
+2016-09-22 10:25:04  [ ScalaTest-run:5511 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 59949.
+2016-09-22 10:25:04  [ ScalaTest-run:5570 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:25:04  [ ScalaTest-run:5696 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:25:04  [ ScalaTest-run:5762 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-4eb0eb07-c0c2-46d9-a8e7-db16f58cfc6e
+2016-09-22 10:25:04  [ ScalaTest-run:5837 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:25:05  [ ScalaTest-run:6292 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:25:05  [ ScalaTest-run:7048 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:25:05  [ ScalaTest-run:7138 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:25:05  [ ScalaTest-run:7139 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:25:05  [ ScalaTest-run:7149 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:25:06  [ ScalaTest-run:7409 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:25:06  [ ScalaTest-run:7466 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59970.
+2016-09-22 10:25:06  [ ScalaTest-run:7468 ] - [ INFO ]  Server created on 59970
+2016-09-22 10:25:06  [ ScalaTest-run:7472 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:25:06  [ dispatcher-event-loop-2:7480 ] - [ INFO ]  Registering block manager localhost:59970 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 59970)
+2016-09-22 10:25:06  [ ScalaTest-run:7486 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:25:06  [ ScalaTest-run-running-RDDSuite:8182 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:25:07  [ ScalaTest-run-running-RDDSuite:9095 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:25:07  [ dag-scheduler-event-loop:9151 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:25:07  [ dag-scheduler-event-loop:9153 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:25:07  [ dag-scheduler-event-loop:9154 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:25:07  [ dag-scheduler-event-loop:9159 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:25:07  [ dag-scheduler-event-loop:9174 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:25:08  [ dag-scheduler-event-loop:9584 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.4 KB, free 2.4 KB)
+2016-09-22 10:25:08  [ dag-scheduler-event-loop:9621 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1513.0 B, free 3.9 KB)
+2016-09-22 10:25:08  [ dispatcher-event-loop-1:9629 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:59970 (size: 1513.0 B, free: 1117.9 MB)
+2016-09-22 10:25:08  [ dag-scheduler-event-loop:9635 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:25:08  [ dag-scheduler-event-loop:9649 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:25:08  [ dag-scheduler-event-loop:9657 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:25:08  [ dispatcher-event-loop-0:9844 ] - [ WARN ]  Stage 0 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:25:08  [ dispatcher-event-loop-0:9848 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:25:08  [ dispatcher-event-loop-0:9863 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:25:08  [ Executor task launch worker-1:9889 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:25:08  [ Executor task launch worker-0:9889 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:25:08  [ Executor task launch worker-0:10124 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+2016-09-22 10:25:08  [ Executor task launch worker-1:10155 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
+2016-09-22 10:25:08  [ task-result-getter-0:10173 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 415 ms on localhost (1/2)
+2016-09-22 10:25:08  [ task-result-getter-1:10177 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 319 ms on localhost (2/2)
+2016-09-22 10:25:08  [ task-result-getter-1:10182 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10452 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.747 s
+2016-09-22 10:25:09  [ ScalaTest-run-running-RDDSuite:10469 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.373398 s
+2016-09-22 10:25:09  [ ScalaTest-run-running-RDDSuite:10531 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10533 ] - [ INFO ]  Got job 1 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10534 ] - [ INFO ]  Final stage: ResultStage 1 (apply at Transformer.scala:22)
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10534 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10534 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10535 ] - [ INFO ]  Submitting ResultStage 1 (MapPartitionsRDD[2] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10539 ] - [ INFO ]  Block broadcast_1 stored as values in memory (estimated size 2.4 KB, free 6.2 KB)
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10545 ] - [ INFO ]  Block broadcast_1_piece0 stored as bytes in memory (estimated size 1510.0 B, free 7.7 KB)
+2016-09-22 10:25:09  [ dispatcher-event-loop-2:10548 ] - [ INFO ]  Added broadcast_1_piece0 in memory on localhost:59970 (size: 1510.0 B, free: 1117.9 MB)
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10555 ] - [ INFO ]  Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10557 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 1 (MapPartitionsRDD[2] at apply at Transformer.scala:22)
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10557 ] - [ INFO ]  Adding task set 1.0 with 2 tasks
+2016-09-22 10:25:09  [ dispatcher-event-loop-3:10563 ] - [ WARN ]  Stage 1 contains a task of very large size (197 KB). The maximum recommended task size is 100 KB.
+2016-09-22 10:25:09  [ dispatcher-event-loop-3:10565 ] - [ INFO ]  Starting task 0.0 in stage 1.0 (TID 2, localhost, partition 0,PROCESS_LOCAL, 202014 bytes)
+2016-09-22 10:25:09  [ dispatcher-event-loop-3:10577 ] - [ INFO ]  Starting task 1.0 in stage 1.0 (TID 3, localhost, partition 1,PROCESS_LOCAL, 202018 bytes)
+2016-09-22 10:25:09  [ Executor task launch worker-0:10579 ] - [ INFO ]  Running task 1.0 in stage 1.0 (TID 3)
+2016-09-22 10:25:09  [ Executor task launch worker-1:10582 ] - [ INFO ]  Running task 0.0 in stage 1.0 (TID 2)
+2016-09-22 10:25:09  [ Executor task launch worker-1:10595 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 2). 1360 bytes result sent to driver
+2016-09-22 10:25:09  [ Executor task launch worker-0:10619 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 3). 1360 bytes result sent to driver
+2016-09-22 10:25:09  [ task-result-getter-2:10623 ] - [ INFO ]  Finished task 0.0 in stage 1.0 (TID 2) in 62 ms on localhost (1/2)
+2016-09-22 10:25:09  [ task-result-getter-3:10634 ] - [ INFO ]  Finished task 1.0 in stage 1.0 (TID 3) in 63 ms on localhost (2/2)
+2016-09-22 10:25:09  [ task-result-getter-3:10635 ] - [ INFO ]  Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2016-09-22 10:25:09  [ dag-scheduler-event-loop:10636 ] - [ INFO ]  ResultStage 1 (apply at Transformer.scala:22) finished in 0.076 s
+2016-09-22 10:25:09  [ ScalaTest-run-running-RDDSuite:10637 ] - [ INFO ]  Job 1 finished: apply at Transformer.scala:22, took 0.105691 s
+2016-09-22 10:25:09  [ ScalaTest-run-running-RDDSuite:10655 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with predefined ordering' =====
+
+2016-09-22 10:25:09  [ ScalaTest-run:10729 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10731 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10732 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10732 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10734 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10734 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10734 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10737 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10737 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10737 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10738 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10738 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10738 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10739 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:25:09  [ ScalaTest-run:10819 ] - [ WARN ]  1 threads could not be stopped
+2016-09-22 10:25:09  [ ScalaTest-run:10821 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:25:09  [ dispatcher-event-loop-3:10849 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:25:09  [ ScalaTest-run:10876 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:25:09  [ ScalaTest-run:10878 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:25:09  [ ScalaTest-run:10896 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:25:09  [ dispatcher-event-loop-3:10904 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:25:09  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10917 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:25:09  [ ScalaTest-run:10921 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:25:09  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10922 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:25:09  [ Thread-3:10963 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:25:09  [ Thread-3:10968 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-44183977-42ff-4aeb-bffe-9bcbd43666ba
+2016-09-22 10:37:51  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:37:53  [ ScalaTest-run:1581 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:37:53  [ ScalaTest-run:1748 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:37:53  [ ScalaTest-run:1750 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:37:53  [ ScalaTest-run:1751 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:37:54  [ ScalaTest-run:3013 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 60537.
+2016-09-22 10:37:55  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:3905 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:37:55  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4095 ] - [ INFO ]  Starting remoting
+2016-09-22 10:37:57  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:5853 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:60553]
+2016-09-22 10:37:57  [ ScalaTest-run:5875 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 60553.
+2016-09-22 10:37:57  [ ScalaTest-run:5924 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:37:57  [ ScalaTest-run:6001 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:37:57  [ ScalaTest-run:6048 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-af32939a-a7cb-44c9-84f5-f8f1264c0ffb
+2016-09-22 10:37:57  [ ScalaTest-run:6107 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:37:58  [ ScalaTest-run:6495 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:37:58  [ ScalaTest-run:7202 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:37:59  [ ScalaTest-run:7337 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:37:59  [ ScalaTest-run:7337 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:37:59  [ ScalaTest-run:7343 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:37:59  [ ScalaTest-run:7632 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:37:59  [ ScalaTest-run:7704 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60572.
+2016-09-22 10:37:59  [ ScalaTest-run:7707 ] - [ INFO ]  Server created on 60572
+2016-09-22 10:37:59  [ ScalaTest-run:7715 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:37:59  [ dispatcher-event-loop-2:7724 ] - [ INFO ]  Registering block manager localhost:60572 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 60572)
+2016-09-22 10:37:59  [ ScalaTest-run:7734 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:38:00  [ ScalaTest-run-running-RDDSuite:8491 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:38:01  [ ScalaTest-run-running-RDDSuite:9411 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9474 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9476 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9479 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9486 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9506 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9839 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9880 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1429.0 B, free 3.7 KB)
+2016-09-22 10:38:01  [ dispatcher-event-loop-0:9891 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:60572 (size: 1429.0 B, free: 1117.9 MB)
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9898 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9909 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:38:01  [ dag-scheduler-event-loop:9914 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:38:01  [ dispatcher-event-loop-1:10055 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:38:01  [ dispatcher-event-loop-1:10064 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:38:01  [ Executor task launch worker-1:10094 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:38:01  [ Executor task launch worker-0:10095 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:38:02  [ Executor task launch worker-1:10286 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1254 bytes result sent to driver
+2016-09-22 10:38:02  [ Executor task launch worker-0:10286 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1254 bytes result sent to driver
+2016-09-22 10:38:02  [ task-result-getter-1:10311 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 321 ms on localhost (1/2)
+2016-09-22 10:38:02  [ task-result-getter-0:10312 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 249 ms on localhost (2/2)
+2016-09-22 10:38:02  [ task-result-getter-0:10316 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:38:02  [ dag-scheduler-event-loop:10319 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.376 s
+2016-09-22 10:38:02  [ ScalaTest-run-running-RDDSuite:10347 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 0.934551 s
+2016-09-22 10:38:02  [ ScalaTest-run-running-RDDSuite:10608 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:38:02  [ ScalaTest-run:10725 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10726 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10727 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10727 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10728 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10729 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10730 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10731 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10731 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10732 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10732 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10733 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10734 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10734 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10735 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10736 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10737 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10737 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10738 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10738 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10739 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:38:02  [ ScalaTest-run:10801 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:38:02  [ dispatcher-event-loop-1:10871 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:38:02  [ ScalaTest-run:10943 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:38:02  [ ScalaTest-run:10946 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:38:02  [ ScalaTest-run:11066 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:38:02  [ dispatcher-event-loop-0:11086 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:38:02  [ ScalaTest-run:11132 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:38:02  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:11197 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:38:02  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:11198 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:38:03  [ Thread-3:11363 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:38:03  [ Thread-3:11369 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-574e7ff5-54e6-4309-86fd-718dfea5c4e6
+2016-09-22 10:42:23  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:42:24  [ ScalaTest-run:1449 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:42:24  [ ScalaTest-run:1693 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:42:24  [ ScalaTest-run:1694 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:42:24  [ ScalaTest-run:1695 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:42:26  [ ScalaTest-run:3301 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 60758.
+2016-09-22 10:42:27  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:4273 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:42:27  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:4418 ] - [ INFO ]  Starting remoting
+2016-09-22 10:42:28  [ ScalaTest-run:5152 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 60774.
+2016-09-22 10:42:28  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:5170 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:60774]
+2016-09-22 10:42:28  [ ScalaTest-run:5217 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:42:28  [ ScalaTest-run:5396 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:42:28  [ ScalaTest-run:5441 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-b6e1944e-abbf-4d4f-b288-ba65351e198b
+2016-09-22 10:42:28  [ ScalaTest-run:5510 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:42:28  [ ScalaTest-run:5775 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:42:29  [ ScalaTest-run:6300 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:42:29  [ ScalaTest-run:6417 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:42:29  [ ScalaTest-run:6418 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:42:29  [ ScalaTest-run:6425 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:42:29  [ ScalaTest-run:6660 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:42:29  [ ScalaTest-run:6735 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60793.
+2016-09-22 10:42:29  [ ScalaTest-run:6737 ] - [ INFO ]  Server created on 60793
+2016-09-22 10:42:29  [ ScalaTest-run:6741 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:42:29  [ dispatcher-event-loop-2:6750 ] - [ INFO ]  Registering block manager localhost:60793 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 60793)
+2016-09-22 10:42:29  [ ScalaTest-run:6756 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:42:30  [ ScalaTest-run-running-RDDSuite:7300 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:42:31  [ ScalaTest-run-running-RDDSuite:8122 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8172 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8173 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8175 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8180 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8198 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8546 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8575 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1429.0 B, free 3.7 KB)
+2016-09-22 10:42:31  [ dispatcher-event-loop-0:8583 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:60793 (size: 1429.0 B, free: 1117.9 MB)
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8589 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8604 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:42:31  [ dag-scheduler-event-loop:8609 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:42:32  [ dispatcher-event-loop-1:8876 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:42:32  [ dispatcher-event-loop-1:8887 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:42:32  [ Executor task launch worker-1:8921 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:42:32  [ Executor task launch worker-0:8938 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:42:32  [ Executor task launch worker-1:9079 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1254 bytes result sent to driver
+2016-09-22 10:42:32  [ Executor task launch worker-0:9087 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1254 bytes result sent to driver
+2016-09-22 10:42:32  [ task-result-getter-0:9147 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 254 ms on localhost (1/2)
+2016-09-22 10:42:32  [ task-result-getter-1:9151 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 464 ms on localhost (2/2)
+2016-09-22 10:42:32  [ task-result-getter-1:9156 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:42:32  [ dag-scheduler-event-loop:9411 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.764 s
+2016-09-22 10:42:32  [ ScalaTest-run-running-RDDSuite:9430 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.306204 s
+2016-09-22 10:42:32  [ ScalaTest-run-running-RDDSuite:9488 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:42:32  [ ScalaTest-run:9542 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9543 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9543 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9544 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9545 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9545 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9545 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9545 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9546 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9546 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9546 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9547 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9547 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9547 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9548 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9548 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9548 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9549 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9549 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9550 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9551 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9551 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9551 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9552 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9552 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:42:32  [ ScalaTest-run:9607 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:42:32  [ dispatcher-event-loop-1:9651 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:42:32  [ ScalaTest-run:9715 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:42:32  [ ScalaTest-run:9725 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:42:32  [ ScalaTest-run:9756 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:42:32  [ dispatcher-event-loop-1:9770 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:42:33  [ ScalaTest-run:9783 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:42:33  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:9836 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:42:33  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:9837 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:42:33  [ Thread-3:9854 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:42:33  [ Thread-3:9857 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-af8e1885-2618-4278-a4be-6b6d965342f6
+2016-09-22 10:45:12  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:45:13  [ ScalaTest-run:1179 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:45:13  [ ScalaTest-run:1457 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:45:13  [ ScalaTest-run:1458 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:45:13  [ ScalaTest-run:1460 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:45:15  [ ScalaTest-run:3025 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 60901.
+2016-09-22 10:45:16  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:3815 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:45:16  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:4030 ] - [ INFO ]  Starting remoting
+2016-09-22 10:45:17  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:5182 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:60916]
+2016-09-22 10:45:17  [ ScalaTest-run:5188 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 60916.
+2016-09-22 10:45:17  [ ScalaTest-run:5226 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:45:17  [ ScalaTest-run:5321 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:45:17  [ ScalaTest-run:5349 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-f271bcdc-fcd6-463f-8c67-2dc0e3f96a76
+2016-09-22 10:45:17  [ ScalaTest-run:5387 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:45:18  [ ScalaTest-run:5565 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:45:18  [ ScalaTest-run:6024 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:45:18  [ ScalaTest-run:6102 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:45:18  [ ScalaTest-run:6102 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:45:18  [ ScalaTest-run:6109 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:45:18  [ ScalaTest-run:6369 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:45:18  [ ScalaTest-run:6446 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60935.
+2016-09-22 10:45:18  [ ScalaTest-run:6448 ] - [ INFO ]  Server created on 60935
+2016-09-22 10:45:18  [ ScalaTest-run:6453 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:45:18  [ dispatcher-event-loop-2:6462 ] - [ INFO ]  Registering block manager localhost:60935 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 60935)
+2016-09-22 10:45:18  [ ScalaTest-run:6469 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:45:19  [ ScalaTest-run-running-RDDSuite:6991 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:45:20  [ ScalaTest-run-running-RDDSuite:7701 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:7750 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:7752 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:7754 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:7759 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:7779 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:8211 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:8243 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1429.0 B, free 3.7 KB)
+2016-09-22 10:45:20  [ dispatcher-event-loop-0:8250 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:60935 (size: 1429.0 B, free: 1117.9 MB)
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:8256 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:8264 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:45:20  [ dag-scheduler-event-loop:8268 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:45:20  [ dispatcher-event-loop-1:8394 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:45:20  [ dispatcher-event-loop-1:8403 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:45:20  [ Executor task launch worker-1:8426 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:45:20  [ Executor task launch worker-0:8425 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:45:21  [ Executor task launch worker-0:8563 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1254 bytes result sent to driver
+2016-09-22 10:45:21  [ Executor task launch worker-1:8578 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1254 bytes result sent to driver
+2016-09-22 10:45:21  [ task-result-getter-0:8586 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 255 ms on localhost (1/2)
+2016-09-22 10:45:21  [ task-result-getter-1:8601 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 200 ms on localhost (2/2)
+2016-09-22 10:45:21  [ task-result-getter-1:8605 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:45:21  [ dag-scheduler-event-loop:8838 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.547 s
+2016-09-22 10:45:21  [ ScalaTest-run-running-RDDSuite:8852 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.150577 s
+2016-09-22 10:45:21  [ ScalaTest-run-running-RDDSuite:8872 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:45:21  [ ScalaTest-run:8936 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8936 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8937 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8938 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8938 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8938 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8938 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8940 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8940 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8940 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8941 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8941 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8941 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8941 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8942 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8942 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8942 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8942 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8943 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8943 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8943 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8943 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8944 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8944 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8944 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:45:21  [ ScalaTest-run:8999 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:45:21  [ dispatcher-event-loop-0:9030 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:45:21  [ ScalaTest-run:9059 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:45:21  [ ScalaTest-run:9062 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:45:21  [ ScalaTest-run:9082 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:45:21  [ dispatcher-event-loop-1:9091 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:45:21  [ ScalaTest-run:9105 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:45:21  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:9113 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:45:21  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:9117 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:45:21  [ Thread-3:9136 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:45:21  [ Thread-3:9139 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-b9e3f7bd-47f2-4a95-a406-28ee473e9019
+2016-09-22 10:48:24  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:48:25  [ ScalaTest-run:1217 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:48:25  [ ScalaTest-run:1579 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:48:25  [ ScalaTest-run:1580 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:48:25  [ ScalaTest-run:1582 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:48:27  [ ScalaTest-run:3564 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 61055.
+2016-09-22 10:48:28  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:4431 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:48:28  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:4550 ] - [ INFO ]  Starting remoting
+2016-09-22 10:48:29  [ ScalaTest-run:5193 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 61068.
+2016-09-22 10:48:29  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:5204 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:61068]
+2016-09-22 10:48:29  [ ScalaTest-run:5275 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:48:29  [ ScalaTest-run:5347 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:48:29  [ ScalaTest-run:5386 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-a65d179b-5c1d-4746-8201-382dd6f5d3a1
+2016-09-22 10:48:29  [ ScalaTest-run:5452 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:48:29  [ ScalaTest-run:5655 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:48:30  [ ScalaTest-run:6286 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:48:30  [ ScalaTest-run:6404 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:48:30  [ ScalaTest-run:6404 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:48:30  [ ScalaTest-run:6416 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:48:30  [ ScalaTest-run:6670 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:48:30  [ ScalaTest-run:6759 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 61087.
+2016-09-22 10:48:30  [ ScalaTest-run:6761 ] - [ INFO ]  Server created on 61087
+2016-09-22 10:48:30  [ ScalaTest-run:6766 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:48:30  [ dispatcher-event-loop-1:6776 ] - [ INFO ]  Registering block manager localhost:61087 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 61087)
+2016-09-22 10:48:30  [ ScalaTest-run:6781 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:48:31  [ ScalaTest-run-running-RDDSuite:7331 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:48:32  [ ScalaTest-run-running-RDDSuite:8119 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8176 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 2 output partitions
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8178 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8180 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8185 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8204 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8654 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8688 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1429.0 B, free 3.7 KB)
+2016-09-22 10:48:32  [ dispatcher-event-loop-3:8699 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:61087 (size: 1429.0 B, free: 1117.9 MB)
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8710 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8723 ] - [ INFO ]  Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:48:32  [ dag-scheduler-event-loop:8729 ] - [ INFO ]  Adding task set 0.0 with 2 tasks
+2016-09-22 10:48:33  [ dispatcher-event-loop-2:8885 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:48:33  [ dispatcher-event-loop-2:8894 ] - [ INFO ]  Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2088 bytes)
+2016-09-22 10:48:33  [ Executor task launch worker-0:8924 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:48:33  [ Executor task launch worker-1:8925 ] - [ INFO ]  Running task 1.0 in stage 0.0 (TID 1)
+2016-09-22 10:48:33  [ Executor task launch worker-1:9111 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1). 1254 bytes result sent to driver
+2016-09-22 10:48:33  [ Executor task launch worker-0:9153 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1254 bytes result sent to driver
+2016-09-22 10:48:33  [ task-result-getter-0:9157 ] - [ INFO ]  Finished task 1.0 in stage 0.0 (TID 1) in 257 ms on localhost (1/2)
+2016-09-22 10:48:33  [ task-result-getter-1:9216 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 398 ms on localhost (2/2)
+2016-09-22 10:48:33  [ task-result-getter-1:9230 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:48:33  [ dag-scheduler-event-loop:9622 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.858 s
+2016-09-22 10:48:33  [ ScalaTest-run-running-RDDSuite:9642 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.522532 s
+2016-09-22 10:48:33  [ ScalaTest-run-running-RDDSuite:9664 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:48:33  [ ScalaTest-run:9789 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9790 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9791 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9791 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9793 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9794 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9794 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9797 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9799 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9799 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9800 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9800 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9800 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9800 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9801 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9801 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9801 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9801 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9801 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9802 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9802 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9802 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9803 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9803 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:48:33  [ ScalaTest-run:9803 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:48:34  [ ScalaTest-run:9885 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:48:34  [ dispatcher-event-loop-3:9957 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:48:34  [ ScalaTest-run:9994 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:48:34  [ ScalaTest-run:9997 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:48:34  [ ScalaTest-run:10022 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:48:34  [ dispatcher-event-loop-3:10054 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:48:34  [ ScalaTest-run:10070 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:48:34  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:10119 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:48:34  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:10120 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:48:34  [ Thread-3:10165 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:48:34  [ Thread-3:10169 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-3d9adcc1-cd00-4402-8978-396fb2cb01e7
+2016-09-22 10:51:03  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:51:04  [ ScalaTest-run:1586 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:51:05  [ ScalaTest-run:1809 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:51:05  [ ScalaTest-run:1811 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:51:05  [ ScalaTest-run:1812 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:51:06  [ ScalaTest-run:3439 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 61232.
+2016-09-22 10:51:07  [ sparkDriverActorSystem-akka.actor.default-dispatcher-4:4265 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:51:07  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4509 ] - [ INFO ]  Starting remoting
+2016-09-22 10:51:08  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:5209 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:61246]
+2016-09-22 10:51:08  [ ScalaTest-run:5215 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 61246.
+2016-09-22 10:51:08  [ ScalaTest-run:5260 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:51:08  [ ScalaTest-run:5355 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:51:08  [ ScalaTest-run:5396 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-b14d3f0e-9733-4b8a-8fad-8f3cea7bab80
+2016-09-22 10:51:08  [ ScalaTest-run:5462 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:51:09  [ ScalaTest-run:5703 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:51:09  [ ScalaTest-run:6194 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:51:09  [ ScalaTest-run:6309 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:51:09  [ ScalaTest-run:6310 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:51:09  [ ScalaTest-run:6319 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:51:09  [ ScalaTest-run:6579 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:51:09  [ ScalaTest-run:6660 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 61267.
+2016-09-22 10:51:09  [ ScalaTest-run:6662 ] - [ INFO ]  Server created on 61267
+2016-09-22 10:51:09  [ ScalaTest-run:6667 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:51:09  [ dispatcher-event-loop-2:6676 ] - [ INFO ]  Registering block manager localhost:61267 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 61267)
+2016-09-22 10:51:09  [ ScalaTest-run:6682 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:51:10  [ ScalaTest-run-running-RDDSuite:7273 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:51:11  [ ScalaTest-run-running-RDDSuite:8141 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:51:11  [ dag-scheduler-event-loop:8192 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 1 output partitions
+2016-09-22 10:51:11  [ dag-scheduler-event-loop:8194 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:51:11  [ dag-scheduler-event-loop:8196 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:51:11  [ dag-scheduler-event-loop:8202 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:51:11  [ dag-scheduler-event-loop:8223 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:51:12  [ dag-scheduler-event-loop:8841 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:51:12  [ dag-scheduler-event-loop:8895 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1426.0 B, free 3.7 KB)
+2016-09-22 10:51:12  [ dispatcher-event-loop-0:8907 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:61267 (size: 1426.0 B, free: 1117.9 MB)
+2016-09-22 10:51:12  [ dag-scheduler-event-loop:8917 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:51:12  [ dag-scheduler-event-loop:8934 ] - [ INFO ]  Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:51:12  [ dag-scheduler-event-loop:8939 ] - [ INFO ]  Adding task set 0.0 with 1 tasks
+2016-09-22 10:51:12  [ dispatcher-event-loop-1:9139 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2096 bytes)
+2016-09-22 10:51:12  [ Executor task launch worker-0:9194 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:51:12  [ Executor task launch worker-0:9332 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1262 bytes result sent to driver
+2016-09-22 10:51:12  [ task-result-getter-0:9449 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 415 ms on localhost (1/1)
+2016-09-22 10:51:12  [ task-result-getter-0:9449 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:51:13  [ dag-scheduler-event-loop:9846 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.870 s
+2016-09-22 10:51:13  [ ScalaTest-run-running-RDDSuite:9864 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.721626 s
+2016-09-22 10:51:13  [ ScalaTest-run-running-RDDSuite:9890 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:51:13  [ ScalaTest-run:9955 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9956 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9956 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9956 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9957 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9957 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9957 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9959 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9959 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9960 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9960 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9960 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9960 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9961 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9961 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9961 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9962 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9962 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9962 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9962 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9963 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9963 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9963 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9964 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:51:13  [ ScalaTest-run:9964 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:51:13  [ ScalaTest-run:10070 ] - [ WARN ]  6 threads could not be stopped
+2016-09-22 10:51:13  [ ScalaTest-run:10073 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:51:13  [ dispatcher-event-loop-2:10172 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:51:13  [ ScalaTest-run:10226 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:51:13  [ ScalaTest-run:10232 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:51:13  [ ScalaTest-run:10261 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:51:13  [ dispatcher-event-loop-2:10272 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:51:13  [ ScalaTest-run:10307 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:51:13  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10313 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:51:13  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:10342 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:51:13  [ Thread-3:10370 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:51:13  [ Thread-3:10374 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-b0efef98-c817-43e0-a452-2cb7732181c7
+2016-09-22 10:56:49  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 10:56:50  [ ScalaTest-run:1168 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 10:56:50  [ ScalaTest-run:1430 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 10:56:50  [ ScalaTest-run:1432 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 10:56:50  [ ScalaTest-run:1433 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 10:56:52  [ ScalaTest-run:3004 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 61539.
+2016-09-22 10:56:53  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:3954 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 10:56:53  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:4088 ] - [ INFO ]  Starting remoting
+2016-09-22 10:56:53  [ sparkDriverActorSystem-akka.actor.default-dispatcher-3:4530 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:61552]
+2016-09-22 10:56:53  [ ScalaTest-run:4545 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 61552.
+2016-09-22 10:56:53  [ ScalaTest-run:4614 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 10:56:53  [ ScalaTest-run:4690 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 10:56:53  [ ScalaTest-run:4730 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-cf3b23f5-0f9c-4647-87e9-7682eaac0b42
+2016-09-22 10:56:53  [ ScalaTest-run:4791 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 10:56:54  [ ScalaTest-run:5040 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 10:56:54  [ ScalaTest-run:5873 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 10:56:55  [ ScalaTest-run:5982 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 10:56:55  [ ScalaTest-run:5983 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 10:56:55  [ ScalaTest-run:6004 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 10:56:55  [ ScalaTest-run:6224 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 10:56:55  [ ScalaTest-run:6277 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 61572.
+2016-09-22 10:56:55  [ ScalaTest-run:6279 ] - [ INFO ]  Server created on 61572
+2016-09-22 10:56:55  [ ScalaTest-run:6282 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 10:56:55  [ dispatcher-event-loop-2:6288 ] - [ INFO ]  Registering block manager localhost:61572 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 61572)
+2016-09-22 10:56:55  [ ScalaTest-run:6292 ] - [ INFO ]  Registered BlockManager
+2016-09-22 10:56:55  [ ScalaTest-run-running-RDDSuite:6815 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:56:56  [ ScalaTest-run-running-RDDSuite:7594 ] - [ INFO ]  Starting job: apply at Transformer.scala:22
+2016-09-22 10:56:56  [ dag-scheduler-event-loop:7655 ] - [ INFO ]  Got job 0 (apply at Transformer.scala:22) with 1 output partitions
+2016-09-22 10:56:56  [ dag-scheduler-event-loop:7657 ] - [ INFO ]  Final stage: ResultStage 0 (apply at Transformer.scala:22)
+2016-09-22 10:56:56  [ dag-scheduler-event-loop:7659 ] - [ INFO ]  Parents of final stage: List()
+2016-09-22 10:56:56  [ dag-scheduler-event-loop:7664 ] - [ INFO ]  Missing parents: List()
+2016-09-22 10:56:56  [ dag-scheduler-event-loop:7690 ] - [ INFO ]  Submitting ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22), which has no missing parents
+2016-09-22 10:56:57  [ dag-scheduler-event-loop:8023 ] - [ INFO ]  Block broadcast_0 stored as values in memory (estimated size 2.3 KB, free 2.3 KB)
+2016-09-22 10:56:57  [ dag-scheduler-event-loop:8091 ] - [ INFO ]  Block broadcast_0_piece0 stored as bytes in memory (estimated size 1426.0 B, free 3.7 KB)
+2016-09-22 10:56:57  [ dispatcher-event-loop-0:8172 ] - [ INFO ]  Added broadcast_0_piece0 in memory on localhost:61572 (size: 1426.0 B, free: 1117.9 MB)
+2016-09-22 10:56:57  [ dag-scheduler-event-loop:8178 ] - [ INFO ]  Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+2016-09-22 10:56:57  [ dag-scheduler-event-loop:8197 ] - [ INFO ]  Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at apply at Transformer.scala:22)
+2016-09-22 10:56:57  [ dag-scheduler-event-loop:8206 ] - [ INFO ]  Adding task set 0.0 with 1 tasks
+2016-09-22 10:56:57  [ dispatcher-event-loop-1:8353 ] - [ INFO ]  Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2096 bytes)
+2016-09-22 10:56:57  [ Executor task launch worker-0:8380 ] - [ INFO ]  Running task 0.0 in stage 0.0 (TID 0)
+2016-09-22 10:56:57  [ Executor task launch worker-0:8536 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0). 1262 bytes result sent to driver
+2016-09-22 10:56:57  [ task-result-getter-0:8589 ] - [ INFO ]  Finished task 0.0 in stage 0.0 (TID 0) in 301 ms on localhost (1/1)
+2016-09-22 10:56:57  [ task-result-getter-0:8595 ] - [ INFO ]  Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-09-22 10:56:58  [ dag-scheduler-event-loop:9090 ] - [ INFO ]  ResultStage 0 (apply at Transformer.scala:22) finished in 0.849 s
+2016-09-22 10:56:58  [ ScalaTest-run-running-RDDSuite:9105 ] - [ INFO ]  Job 0 finished: apply at Transformer.scala:22, took 1.509767 s
+2016-09-22 10:56:58  [ ScalaTest-run-running-RDDSuite:9128 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'top with custom ordering' =====
+
+2016-09-22 10:56:58  [ ScalaTest-run:9191 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9191 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9192 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9192 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9193 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9193 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9193 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9193 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9194 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9194 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9194 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9195 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9195 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9195 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9196 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9196 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9196 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9196 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9197 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9197 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9197 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9197 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9201 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9201 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9201 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 10:56:58  [ ScalaTest-run:9256 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 10:56:58  [ dispatcher-event-loop-2:9289 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 10:56:58  [ ScalaTest-run:9325 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 10:56:58  [ ScalaTest-run:9327 ] - [ INFO ]  BlockManager stopped
+2016-09-22 10:56:58  [ ScalaTest-run:9356 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 10:56:58  [ dispatcher-event-loop-2:9364 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 10:56:58  [ ScalaTest-run:9379 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 10:56:58  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:9381 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 10:56:58  [ sparkDriverActorSystem-akka.actor.default-dispatcher-5:9385 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 10:56:58  [ Thread-3:9401 ] - [ INFO ]  Shutdown hook called
+2016-09-22 10:56:58  [ Thread-3:9405 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-48794cd4-bb1a-4c4e-97bf-42e7f7d09d5f
+2016-09-22 15:28:09  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 15:28:11  [ ScalaTest-run:2090 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 15:28:11  [ ScalaTest-run:2574 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 15:28:11  [ ScalaTest-run:2577 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 15:28:11  [ ScalaTest-run:2579 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 15:28:13  [ ScalaTest-run:4503 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 51333.
+2016-09-22 15:28:14  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:5492 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 15:28:14  [ sparkDriverActorSystem-akka.actor.default-dispatcher-6:5713 ] - [ INFO ]  Starting remoting
+2016-09-22 15:28:15  [ ScalaTest-run:6493 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 51346.
+2016-09-22 15:28:15  [ ScalaTest-run:6551 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 15:28:15  [ sparkDriverActorSystem-akka.actor.default-dispatcher-6:6555 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:51346]
+2016-09-22 15:28:15  [ ScalaTest-run:6659 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 15:28:15  [ ScalaTest-run:6718 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-677cdd67-56aa-43dd-97f1-bc3f0e7dbe44
+2016-09-22 15:28:16  [ ScalaTest-run:6782 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 15:28:16  [ ScalaTest-run:7016 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 15:28:16  [ ScalaTest-run:7659 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 15:28:17  [ ScalaTest-run:7858 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 15:28:17  [ ScalaTest-run:7859 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 15:28:17  [ ScalaTest-run:7883 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 15:28:17  [ ScalaTest-run:8139 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 15:28:17  [ ScalaTest-run:8259 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 51365.
+2016-09-22 15:28:17  [ ScalaTest-run:8261 ] - [ INFO ]  Server created on 51365
+2016-09-22 15:28:17  [ ScalaTest-run:8268 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 15:28:17  [ dispatcher-event-loop-1:8277 ] - [ INFO ]  Registering block manager localhost:51365 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 51365)
+2016-09-22 15:28:17  [ ScalaTest-run:8284 ] - [ INFO ]  Registered BlockManager
+2016-09-22 15:28:18  [ ScalaTest-run-running-RDDSuite:8947 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'getNarrowAncestors with cycles' =====
+
+2016-09-22 15:28:19  [ ScalaTest-run-running-RDDSuite:9984 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'getNarrowAncestors with cycles' =====
+
+2016-09-22 15:28:19  [ ScalaTest-run:10026 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10027 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10027 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10028 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10028 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10028 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10029 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10029 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10030 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10030 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10030 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10031 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10031 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10031 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10032 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10032 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10032 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10033 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10033 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10033 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10034 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10034 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10034 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10035 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10035 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 15:28:19  [ ScalaTest-run:10096 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 15:28:19  [ dispatcher-event-loop-1:10135 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 15:28:19  [ ScalaTest-run:10160 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 15:28:19  [ ScalaTest-run:10164 ] - [ INFO ]  BlockManager stopped
+2016-09-22 15:28:19  [ ScalaTest-run:10181 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 15:28:19  [ dispatcher-event-loop-1:10197 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 15:28:19  [ ScalaTest-run:10222 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 15:28:19  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:10250 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 15:28:19  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:10263 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 15:28:19  [ Thread-3:10263 ] - [ INFO ]  Shutdown hook called
+2016-09-22 15:28:19  [ Thread-3:10266 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-04957f0a-1768-44e8-99a9-5358b1ebf33b
+2016-09-22 15:32:48  [ ScalaTest-run:0 ] - [ INFO ]  Running Spark version 1.6.1
+2016-09-22 15:32:50  [ ScalaTest-run:1991 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-09-22 15:32:51  [ ScalaTest-run:3039 ] - [ INFO ]  Changing view acls to: ning
+2016-09-22 15:32:51  [ ScalaTest-run:3042 ] - [ INFO ]  Changing modify acls to: ning
+2016-09-22 15:32:51  [ ScalaTest-run:3046 ] - [ INFO ]  SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ning); users with modify permissions: Set(ning)
+2016-09-22 15:32:54  [ ScalaTest-run:6205 ] - [ INFO ]  Successfully started service 'sparkDriver' on port 51667.
+2016-09-22 15:32:56  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:8107 ] - [ INFO ]  Slf4jLogger started
+2016-09-22 15:32:56  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:8327 ] - [ INFO ]  Starting remoting
+2016-09-22 15:32:57  [ sparkDriverActorSystem-akka.actor.default-dispatcher-2:9762 ] - [ INFO ]  Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.199.144:51680]
+2016-09-22 15:32:57  [ ScalaTest-run:9776 ] - [ INFO ]  Successfully started service 'sparkDriverActorSystem' on port 51680.
+2016-09-22 15:32:57  [ ScalaTest-run:9823 ] - [ INFO ]  Registering MapOutputTracker
+2016-09-22 15:32:57  [ ScalaTest-run:9885 ] - [ INFO ]  Registering BlockManagerMaster
+2016-09-22 15:32:57  [ ScalaTest-run:9923 ] - [ INFO ]  Created local directory at C:\Users\ning\AppData\Local\Temp\blockmgr-40377385-de80-4e26-bb87-440667272d50
+2016-09-22 15:32:58  [ ScalaTest-run:9982 ] - [ INFO ]  MemoryStore started with capacity 1117.9 MB
+2016-09-22 15:32:58  [ ScalaTest-run:10273 ] - [ INFO ]  Registering OutputCommitCoordinator
+2016-09-22 15:33:00  [ ScalaTest-run:12106 ] - [ INFO ]  jetty-8.1.14.v20131031
+2016-09-22 15:33:00  [ ScalaTest-run:12208 ] - [ INFO ]  Started SelectChannelConnector@0.0.0.0:4040
+2016-09-22 15:33:00  [ ScalaTest-run:12212 ] - [ INFO ]  Successfully started service 'SparkUI' on port 4040.
+2016-09-22 15:33:00  [ ScalaTest-run:12227 ] - [ INFO ]  Started SparkUI at http://192.168.199.144:4040
+2016-09-22 15:33:03  [ ScalaTest-run:15126 ] - [ INFO ]  Starting executor ID driver on host localhost
+2016-09-22 15:33:03  [ ScalaTest-run:15271 ] - [ INFO ]  Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 51702.
+2016-09-22 15:33:03  [ ScalaTest-run:15276 ] - [ INFO ]  Server created on 51702
+2016-09-22 15:33:03  [ ScalaTest-run:15284 ] - [ INFO ]  Trying to register BlockManager
+2016-09-22 15:33:03  [ dispatcher-event-loop-2:15295 ] - [ INFO ]  Registering block manager localhost:51702 with 1117.9 MB RAM, BlockManagerId(driver, localhost, 51702)
+2016-09-22 15:33:03  [ ScalaTest-run:15306 ] - [ INFO ]  Registered BlockManager
+2016-09-22 15:33:06  [ ScalaTest-run-running-RDDSuite:18412 ] - [ INFO ]  
+
+===== TEST OUTPUT FOR o.a.s.rdd.RDDSuite: 'getNarrowAncestors with cycles' =====
+
+2016-09-22 15:33:59  [ driver-heartbeater:71163 ] - [ WARN ]  Error sending message [message = Heartbeat(driver,[Lscala.Tuple2;@a88f6f6,BlockManagerId(driver, localhost, 51702))] in 1 attempts
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10 seconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:48)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:63)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askWithRetry(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:449)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply$mcV$sp(Executor.scala:470)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply(Executor.scala:470)
+	at org.apache.spark.executor.Executor$$anon$1$$anonfun$run$1.apply(Executor.scala:470)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.executor.Executor$$anon$1.run(Executor.scala:470)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)
+	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:107)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53)
+	at scala.concurrent.Await$.result(package.scala:107)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+2016-09-22 15:34:12  [ heartbeat-receiver-event-loop-thread:84831 ] - [ WARN ]  Ignored message: HeartbeatResponse(false)
+2016-09-22 15:37:26  [ ScalaTest-run-running-RDDSuite:278683 ] - [ INFO ]  
+
+===== FINISHED o.a.s.rdd.RDDSuite: 'getNarrowAncestors with cycles' =====
+
+2016-09-22 15:37:27  [ ScalaTest-run:279012 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279013 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279013 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/api,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279014 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279015 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/static,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279015 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279016 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279016 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279017 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/executors,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279017 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279018 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/environment,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279018 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279019 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279019 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279020 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/storage,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279020 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279021 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279021 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279022 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279022 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279023 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/stages,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279024 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279024 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279024 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279025 ] - [ INFO ]  stopped o.e.j.s.ServletContextHandler{/jobs,null}
+2016-09-22 15:37:27  [ ScalaTest-run:279102 ] - [ INFO ]  Stopped Spark web UI at http://192.168.199.144:4040
+2016-09-22 15:37:28  [ dispatcher-event-loop-0:280332 ] - [ INFO ]  MapOutputTrackerMasterEndpoint stopped!
+2016-09-22 15:37:28  [ ScalaTest-run:280359 ] - [ INFO ]  MemoryStore cleared
+2016-09-22 15:37:28  [ ScalaTest-run:280361 ] - [ INFO ]  BlockManager stopped
+2016-09-22 15:37:28  [ ScalaTest-run:280364 ] - [ INFO ]  BlockManagerMaster stopped
+2016-09-22 15:37:28  [ dispatcher-event-loop-0:280382 ] - [ INFO ]  OutputCommitCoordinator stopped!
+2016-09-22 15:37:28  [ sparkDriverActorSystem-akka.actor.default-dispatcher-21:280419 ] - [ INFO ]  Shutting down remote daemon.
+2016-09-22 15:37:28  [ sparkDriverActorSystem-akka.actor.default-dispatcher-21:280430 ] - [ INFO ]  Remote daemon shut down; proceeding with flushing remote transports.
+2016-09-22 15:37:28  [ ScalaTest-run:280465 ] - [ INFO ]  Successfully stopped SparkContext
+2016-09-22 15:37:28  [ Thread-3:280641 ] - [ INFO ]  Shutdown hook called
+2016-09-22 15:37:28  [ Thread-3:280646 ] - [ INFO ]  Deleting directory C:\Users\ning\AppData\Local\Temp\spark-e58f1609-f4a2-4a49-91e2-c972eaed1791
