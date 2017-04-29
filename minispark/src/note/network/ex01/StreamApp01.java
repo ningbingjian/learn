@@ -13,12 +13,17 @@ import org.apache.spark.network.server.TransportServer;
 import org.apache.spark.network.util.SystemPropertyConfigProvider;
 import org.apache.spark.network.util.TransportConf;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
- * Created by zhaoshufen on 2017/4/9.
+ * 测试从服务端获取流
  */
 public class StreamApp01 {
 
@@ -26,6 +31,7 @@ public class StreamApp01 {
     static TransportClientFactory clientFactory;
     static RpcHandler rpcHandler;
     static String requestStreamId = "StreamApp01";
+    static Semaphore sem = new Semaphore(0);
     static {
         //创建测试流
         ByteBuffer buffer = createBuffer(1024);
@@ -57,42 +63,59 @@ public class StreamApp01 {
         };
         TransportConf conf = new TransportConf("shuffle",new SystemPropertyConfigProvider());
         TransportContext context = new TransportContext(conf,rpcHandler);
-        context.createServer();
+        server = context.createServer();
         clientFactory = context.createClientFactory();
     }
 
     public static void main(String[] args)throws Exception {
         TransportClient client = clientFactory.createClient(getLocalHost(),server.getPort());
+        final  FileChannel fileChannel =  new RandomAccessFile("pom1.xml","rw").getChannel();
         client.stream(requestStreamId, new StreamCallback() {
+            int count = 0 ;
             @Override
             public void onData(String streamId, ByteBuffer buf) throws IOException {
-                byte[] tmp = new byte[buf.remaining()];
-                buf.get(tmp);
-                String msg = String.format("客户端：接收到服务端的响应,data.length=%d",tmp.length);
+                fileChannel.write(buf);
+                count += buf.limit();
+                String msg = String.format("客户端:onData,%s,内容:%s",streamId,buf.limit());
                 System.out.println(msg);
+               // String msg = String.format("客户端：接收到服务端的响应,data.length=%d",tmp.length);
+                //System.out.println(msg);
+
             }
 
             @Override
             public void onComplete(String streamId) throws IOException {
-                String msg = String.format("客户端:onComplete,%s",streamId);
-                System.out.println(msg);
+                System.out.println("客户端:onComplete -->" + count);
+                fileChannel.close();
+                sem.release();
+
             }
 
             @Override
             public void onFailure(String streamId, Throwable cause) throws IOException {
                 String msg = String.format("客户端:onFailure,%s,errormsg:%s",streamId,cause.getMessage());
+                sem.release();
             }
         });
+        if(!sem.tryAcquire(1,120, TimeUnit.SECONDS)){
+            throw new RuntimeException("timeout");
+        }
+        client.close();
 
 
     }
     private static ByteBuffer createBuffer(int bufSize) {
-        ByteBuffer buf = ByteBuffer.allocate(bufSize);
-        for (int i = 0; i < bufSize; i ++) {
-            buf.put((byte) i);
+        try {
+            File file = new File("pom.xml");
+            FileChannel fileChannel = new RandomAccessFile(file,"r").getChannel();
+            ByteBuffer buf =  fileChannel.map(FileChannel.MapMode.READ_ONLY,0,file.length());
+            System.out.println("服务端:buf.limit()"+buf.limit());
+            return buf;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+
         }
-        buf.flip();
-        return buf;
     }
     public static String getLocalHost() {
         try {

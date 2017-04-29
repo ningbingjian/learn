@@ -111,7 +111,6 @@ public class RpcApp01 {
         assertEquals(res.successMessages, Sets.newHashSet("Hello, Aaron!"));
         assertTrue(res.errorMessages.isEmpty());
     }
-
     public static String getLocalHost() {
         try {
             return InetAddress.getLocalHost().getHostAddress();

@@ -96,6 +96,11 @@ public class OneForOneStreamManager extends StreamManager {
         return nextChunk;
     }
 
+    @Override
+    public ManagedBuffer openStream(String streamId) {
+        return super.openStream(streamId);
+    }
+
     /**
      * 连接终止
      * @param channel

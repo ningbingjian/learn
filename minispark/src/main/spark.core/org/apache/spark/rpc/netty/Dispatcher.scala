@@ -56,20 +56,28 @@ private[netty] class Dispatcher(nettyEnv: NettyRpcEnv) extends Logging {
   @GuardedBy("this")
   private var stopped = false
 
+  //注册一个endpoint
   def registerRpcEndpoint(name: String, endpoint: RpcEndpoint): NettyRpcEndpointRef = {
+    //保存地址信息
     val addr = RpcEndpointAddress(nettyEnv.address, name)
+    //地址引用
     val endpointRef = new NettyRpcEndpointRef(nettyEnv.conf, addr, nettyEnv)
     synchronized {
       if (stopped) {
         throw new IllegalStateException("RpcEnv has been stopped")
       }
+      //保存到endpoints中,使用名字映射，默认数据是EndpointData
       if (endpoints.putIfAbsent(name, new EndpointData(name, endpoint, endpointRef)) != null) {
         throw new IllegalArgumentException(s"There is already an RpcEndpoint called $name")
       }
+      //获取endpointData
       val data = endpoints.get(name)
+      //endpointRefs的映射关系保存
       endpointRefs.put(data.endpoint, data.ref)
+      //发送一条onStart的消息
       receivers.offer(data)  // for the OnStart message
     }
+    //返回一个endpointRef
     endpointRef
   }
 
@@ -114,9 +122,12 @@ private[netty] class Dispatcher(nettyEnv: NettyRpcEnv) extends Logging {
 
   /** Posts a message sent by a remote endpoint. */
   def postRemoteMessage(message: RequestMessage, callback: RpcResponseCallback): Unit = {
+    //构造一个rpcCallContext,用于回调  RemoteNettyRpcCallContext
     val rpcCallContext =
       new RemoteNettyRpcCallContext(nettyEnv, callback, message.senderAddress)
+    //封装成RpcMessage
     val rpcMessage = RpcMessage(message.senderAddress, message.content, rpcCallContext)
+    //给信箱[inbox]填充消息message
     postMessage(message.receiver.name, rpcMessage, (e) => callback.onFailure(e))
   }
 
@@ -192,6 +203,7 @@ private[netty] class Dispatcher(nettyEnv: NettyRpcEnv) extends Logging {
   }
 
   /** Thread pool used for dispatching messages. */
+    //启动多个线程监听接收器 receivers
   private val threadpool: ThreadPoolExecutor = {
     val numThreads = nettyEnv.conf.getInt("spark.rpc.netty.dispatcher.numThreads",
       Runtime.getRuntime.availableProcessors())
@@ -203,17 +215,20 @@ private[netty] class Dispatcher(nettyEnv: NettyRpcEnv) extends Logging {
   }
 
   /** Message loop used for dispatching messages. */
+  //消息循环监听线程 一个线程会监听一个接收器的消息
   private class MessageLoop extends Runnable {
     override def run(): Unit = {
       try {
         while (true) {
           try {
+            //从接收队列中获取EndpointData 收件箱 阻塞
             val data = receivers.take()
-            if (data == PoisonPill) {
+            if (data == PoisonPill) {//如果是PoisonPill 消息，表明需要结束这个循环监听线程
               // Put PoisonPill back so that other MessageLoops can see it.
               receivers.offer(PoisonPill)
               return
             }
+            //监听到新注册的接收器，调用接收器处理该接收器内部的消息
             data.inbox.process(Dispatcher.this)
           } catch {
             case NonFatal(e) => logError(e.getMessage, e)

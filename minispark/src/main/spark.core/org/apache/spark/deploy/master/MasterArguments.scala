@@ -50,6 +50,12 @@ private[master] class MasterArguments(args: Array[String], conf: SparkConf) {
   }
 
   private def parse(args: List[String]): Unit = args match {
+      /*
+      解析ip --ip 192.168.1.1 或者 -i 192.168.1.1
+      然后 value 是ip的值
+      tail是剩下的参数
+      解析完之后调用parse(tail)解析剩下的参数
+       */
     case ("--ip" | "-i") :: value :: tail =>
       Utils.checkHost(value, "ip no longer supported, please use hostname " + value)
       host = value

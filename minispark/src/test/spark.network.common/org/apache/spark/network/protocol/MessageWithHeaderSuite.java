@@ -17,19 +17,19 @@
 
 package org.apache.spark.network.protocol;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.FileRegion;
 import io.netty.util.AbstractReferenceCounted;
+import org.apache.spark.network.util.ByteArrayWritableChannel;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
 
-import org.apache.spark.network.util.ByteArrayWritableChannel;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MessageWithHeaderSuite {
 
@@ -65,7 +65,9 @@ public class MessageWithHeaderSuite {
     assertEquals(headerLength + region.count(), result.readableBytes());
     assertEquals(42, result.readLong());
     for (long i = 0; i < 8; i++) {
-      assertEquals(i, result.readLong());
+      long r = result.readLong();
+      System.out.println(i +">" + r);
+      assertEquals(i, r);
     }
   }
 

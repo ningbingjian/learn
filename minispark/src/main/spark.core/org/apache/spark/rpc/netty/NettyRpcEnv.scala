@@ -441,15 +441,19 @@ private[netty] class NettyRpcEnvFactory extends RpcEnvFactory with Logging {
     val sparkConf = config.conf
     // Use JavaSerializerInstance in multiple threads is safe. However, if we plan to support
     // KryoSerializer in future, we have to use ThreadLocal to store SerializerInstance
+    //1、默认使用了java序列化
     val javaSerializerInstance =
       new JavaSerializer(sparkConf).newInstance().asInstanceOf[JavaSerializerInstance]
+    //2、创建nettyEnv
     val nettyEnv =
       new NettyRpcEnv(sparkConf, javaSerializerInstance, config.host, config.securityManager)
+    //3 非客户端模式，启动rpcEnv
     if (!config.clientMode) {
       val startNettyRpcEnv: Int => (NettyRpcEnv, Int) = { actualPort =>
         nettyEnv.startServer(actualPort)
         (nettyEnv, nettyEnv.address.port)
       }
+      //启动某一个server
       try {
         Utils.startServiceOnPort(config.port, startNettyRpcEnv, sparkConf, config.name)._1
       } catch {
@@ -579,20 +583,29 @@ private[netty] class NettyRpcHandler(
   }
 
   private def internalReceive(client: TransportClient, message: ByteBuffer): RequestMessage = {
+    //客户端地址
     val addr = client.getChannel().remoteAddress().asInstanceOf[InetSocketAddress]
     assert(addr != null)
+    //封装为RpcAddress
     val clientAddr = RpcAddress(addr.getHostName, addr.getPort)
+    //客户端保存 用于追踪客户端 如果没有这个客户端连接过 给所有的endpoint发送消息
     if (clients.putIfAbsent(client, JBoolean.TRUE) == null) {
       dispatcher.postToAll(RemoteProcessConnected(clientAddr))
     }
+    //反序列化RequestMessage
     val requestMessage = nettyEnv.deserialize[RequestMessage](client, message)
+    //如果发送地址为空
     if (requestMessage.senderAddress == null) {
+      //设置发送地址 sorket client地址就是发送地址
       // Create a new message with the socket address of the client as the sender.
       RequestMessage(clientAddr, requestMessage.receiver, requestMessage.content)
     } else {
+      //如果发送地址不为空
       // The remote RpcEnv listens to some port, we should also fire a RemoteProcessConnected for
       // the listening address
       val remoteEnvAddress = requestMessage.senderAddress
+      //如果 客户端地址 和远程发送地址 还没有映射过  给所有的endpoint发送连接消息
+      //远程RpcEnv侦听某个端口，我们也应该为侦听地址启动一个RemoteProcessConnected
       if (remoteAddresses.putIfAbsent(clientAddr, remoteEnvAddress) == null) {
         dispatcher.postToAll(RemoteProcessConnected(remoteEnvAddress))
       }

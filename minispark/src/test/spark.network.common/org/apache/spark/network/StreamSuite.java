@@ -17,26 +17,7 @@
 
 package org.apache.spark.network;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
-
 import com.google.common.io.Files;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
-
 import org.apache.spark.network.buffer.FileSegmentManagedBuffer;
 import org.apache.spark.network.buffer.ManagedBuffer;
 import org.apache.spark.network.buffer.NioManagedBuffer;
@@ -49,6 +30,21 @@ import org.apache.spark.network.server.StreamManager;
 import org.apache.spark.network.server.TransportServer;
 import org.apache.spark.network.util.SystemPropertyConfigProvider;
 import org.apache.spark.network.util.TransportConf;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.*;
 
 public class StreamSuite {
   private static final String[] STREAMS = { "largeBuffer", "smallBuffer", "emptyBuffer", "file" };
@@ -82,7 +78,7 @@ public class StreamSuite {
     FileOutputStream fp = new FileOutputStream(testFile);
     try {
       Random rnd = new Random();
-      for (int i = 0; i < 512; i++) {
+      for (int i = 0; i < 1024*1024*30; i++) {
         byte[] fileContent = new byte[1024];
         rnd.nextBytes(fileContent);
         fp.write(fileContent);
@@ -161,7 +157,7 @@ public class StreamSuite {
   public void testSingleStream() throws Throwable {
     TransportClient client = clientFactory.createClient(TestUtils.getLocalHost(), server.getPort());
     try {
-      StreamTask task = new StreamTask(client, "largeBuffer", TimeUnit.SECONDS.toMillis(5));
+      StreamTask task = new StreamTask(client, "file", TimeUnit.SECONDS.toMillis(115));
       task.run();
       task.check();
     } finally {

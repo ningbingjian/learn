@@ -33,4 +33,7 @@ gpgkey=https://archive.cloudera.com/cm5/redhat/5/x86_64/cm/RPM-GPG-KEY-cloudera
 #yum -y install cloudera-manager-server cloudera-manager-daemons
 ## 配置cm元数据
 /usr/share/cmf/schema/scm_prepare_database.sh mysql -h localhost scm scm scm
+service cloudera-scm-server start
+
+# 
 

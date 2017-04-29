@@ -1102,10 +1102,13 @@ private[deploy] object Master extends Logging {
   val ENDPOINT_NAME = "Master"
 
   def main(argStrings: Array[String]) {
+
     SignalLogger.register(log)
     val conf = new SparkConf
     val args = new MasterArguments(argStrings, conf)
+    //1-4 步骤
     val (rpcEnv, _, _) = startRpcEnvAndEndpoint(args.host, args.port, args.webUiPort, conf)
+    //5、等待外部发送终止命令
     rpcEnv.awaitTermination()
   }
 
@@ -1114,16 +1117,25 @@ private[deploy] object Master extends Logging {
    *   (1) The Master RpcEnv
    *   (2) The web UI bound port
    *   (3) The REST server bound port, if any
+    *
+    *
+    *   1、master rpcEnv
+    *   2、web UI 端口绑定
+    *   3、rest服务端口绑定\
    */
   def startRpcEnvAndEndpoint(
       host: String,
       port: Int,
       webUiPort: Int,
       conf: SparkConf): (RpcEnv, Int, Option[Int]) = {
+    //1、安全配置管理
     val securityMgr = new SecurityManager(conf)
+    //2、创建rpcEnv运行时环境
     val rpcEnv = RpcEnv.create(SYSTEM_NAME, host, port, conf, securityMgr)
+    //3、配置master终端 用于寻址
     val masterEndpoint = rpcEnv.setupEndpoint(ENDPOINT_NAME,
       new Master(rpcEnv, rpcEnv.address, webUiPort, securityMgr, conf))
+    //4、发送BoundPortsResponse给master终端
     val portsResponse = masterEndpoint.askWithRetry[BoundPortsResponse](BoundPortsRequest)
     (rpcEnv, portsResponse.webUIPort, portsResponse.restPort)
   }
