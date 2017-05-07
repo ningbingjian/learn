@@ -20,9 +20,9 @@ object App   {
   }
 
   def main(args: Array[String]): Unit = {
-    /*System.setProperty("hadoop.home","D:\\tool\\hadoop\\hadoop-2.7.1")*/
+   // System.setProperty("hadoop.home","D:\\tool\\hadoop\\hadoop-2.7.1")
     val sparkConf = new SparkConf()
-    /*sparkConf.setMaster("local[2]")*/
+    sparkConf.setMaster("local[2]")
     sparkConf.setAppName("test")
     val sc = new SparkContext(sparkConf)
     val rdd = sc.parallelize(Seq(

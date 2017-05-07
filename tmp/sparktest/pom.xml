@@ -39,6 +39,16 @@
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-hive_2.11</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming_2.11</artifactId>
       <version>${spark.version}</version>
     </dependency>
@@ -74,16 +84,34 @@
       <version>1.2.5</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor_2.11 -->
+    <!-- https://mvnrepository.com/artifact/org.apache.mahout/mahout-core -->
     <dependency>
+      <groupId>org.apache.mahout</groupId>
+      <artifactId>mahout-core</artifactId>
+      <version>0.9</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.mahout/mahout-math -->
+    <dependency>
+      <groupId>org.apache.mahout</groupId>
+      <artifactId>mahout-math</artifactId>
+      <version>0.13.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor_2.11 -->
+<!--    <dependency>
       <groupId>com.typesafe.akka</groupId>
       <artifactId>akka-actor_2.11</artifactId>
       <version>2.5.0</version>
-    </dependency>
+    </dependency>-->
 
   </dependencies>
 
   <build>
+    <resources>
+      <resource>
+        <directory>src/resources</directory>
+      </resource>
+    </resources>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
