@@ -1178,7 +1178,7 @@ def _test():
     import pyspark.mllib.linalg.distributed
     globs = pyspark.mllib.linalg.distributed.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[2]")\
+        .main("local[2]")\
         .appName("mllib.linalg.distributed tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

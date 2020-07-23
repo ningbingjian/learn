@@ -754,7 +754,7 @@ def _test():
     import pyspark.mllib.classification
     globs = pyspark.mllib.classification.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("mllib.classification tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

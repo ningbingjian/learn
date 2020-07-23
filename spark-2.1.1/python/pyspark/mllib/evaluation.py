@@ -535,7 +535,7 @@ def _test():
     import pyspark.mllib.evaluation
     globs = pyspark.mllib.evaluation.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("mllib.evaluation tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

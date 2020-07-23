@@ -201,7 +201,7 @@ def _test():
     import pyspark.sql.group
     globs = pyspark.sql.group.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("sql.group tests")\
         .getOrCreate()
     sc = spark.sparkContext

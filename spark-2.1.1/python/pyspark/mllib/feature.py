@@ -778,7 +778,7 @@ def _test():
     from pyspark.sql import SparkSession
     globs = globals().copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("mllib.feature tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext
