@@ -1891,7 +1891,7 @@ class HiveSparkSubmitTests(SparkSubmitTests):
             |print(hive_context.sql("show databases").collect())
             """)
         proc = subprocess.Popen(
-            [self.sparkSubmit, "--master", "local-cluster[1,1,1024]",
+            [self.sparkSubmit, "--main", "local-cluster[1,1,1024]",
              "--driver-class-path", hive_site_dir, script],
             stdout=subprocess.PIPE)
         out, err = proc.communicate()

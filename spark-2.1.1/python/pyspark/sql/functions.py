@@ -1883,7 +1883,7 @@ def _test():
     import pyspark.sql.functions
     globs = pyspark.sql.functions.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("sql.functions tests")\
         .getOrCreate()
     sc = spark.sparkContext

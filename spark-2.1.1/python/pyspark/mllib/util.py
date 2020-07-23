@@ -513,7 +513,7 @@ def _test():
     # The small batch size here ensures that we see multiple batches,
     # even in these small test examples:
     spark = SparkSession.builder\
-        .master("local[2]")\
+        .main("local[2]")\
         .appName("mllib.util tests")\
         .getOrCreate()
     globs['spark'] = spark

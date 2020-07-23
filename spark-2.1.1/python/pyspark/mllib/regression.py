@@ -828,7 +828,7 @@ def _test():
     import pyspark.mllib.regression
     globs = pyspark.mllib.regression.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[2]")\
+        .main("local[2]")\
         .appName("mllib.regression tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

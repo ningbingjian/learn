@@ -647,7 +647,7 @@ def _test():
     globs = globals().copy()
     from pyspark.sql import SparkSession
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("mllib.tree tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

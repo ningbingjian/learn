@@ -179,7 +179,7 @@ def _test():
     import pyspark.mllib.fpm
     globs = pyspark.mllib.fpm.__dict__.copy()
     spark = SparkSession.builder\
-        .master("local[4]")\
+        .main("local[4]")\
         .appName("mllib.fpm tests")\
         .getOrCreate()
     globs['sc'] = spark.sparkContext

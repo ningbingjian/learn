@@ -19,7 +19,7 @@
 NaiveBayes Example.
 
 Usage:
-  `spark-submit --master local[4] examples/src/main/python/mllib/naive_bayes_example.py`
+  `spark-submit --main local[4] examples/src/main/python/mllib/naive_bayes_example.py`
 """
 
 from __future__ import print_function

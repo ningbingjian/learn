@@ -67,7 +67,7 @@ class SparkSession(object):
     To create a SparkSession, use the following builder pattern:
 
     >>> spark = SparkSession.builder \\
-    ...     .master("local") \\
+    ...     .main("local") \\
     ...     .appName("Word Count") \\
     ...     .config("spark.some.config.option", "some-value") \\
     ...     .getOrCreate()
@@ -109,14 +109,14 @@ class SparkSession(object):
                 return self
 
         @since(2.0)
-        def master(self, master):
-            """Sets the Spark master URL to connect to, such as "local" to run locally, "local[4]"
-            to run locally with 4 cores, or "spark://master:7077" to run on a Spark standalone
+        def main(self, main):
+            """Sets the Spark main URL to connect to, such as "local" to run locally, "local[4]"
+            to run locally with 4 cores, or "spark://main:7077" to run on a Spark standalone
             cluster.
 
-            :param master: a url for spark master
+            :param main: a url for spark main
             """
-            return self.config("spark.master", master)
+            return self.config("spark.main", main)
 
         @since(2.0)
         def appName(self, name):
